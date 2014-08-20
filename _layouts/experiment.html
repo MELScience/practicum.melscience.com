@@ -1,14 +1,26 @@
 ﻿{% include top.html %}
 <body>
-
+  <h1>{{ page.experiment_name }}</h1>
     <div class="container">
 
-    <div class="row">
+<h2>Reagents</h2>
+<ul>
+{% for reagent in page.reagents %}
+{% for reagent_page in site.pages %}
+{% if reagent_page.id == reagent.id %}
+  <li>{{ reagent.id }} , {{ reagent_page.reagent_name }}</li>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</ul>
 
+<h2>YouTube Videos</h2>
+{% for video in page.youtube_videos %}
+<iframe width="560" height="315" src="//www.youtube.com/embed/{{ video.link | replace:'https://www.youtube.com/watch?v=','' }} " frameborder="0" allowfullscreen></iframe>
+{% endfor %}
 
   {{ content }}
 
-    </div>
 
     </div><!-- /.container -->
 

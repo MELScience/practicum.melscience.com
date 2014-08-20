@@ -1,6 +1,16 @@
 ---
+title: MEL Science Chemistry Experiments
 layout: default
 ---
-
-<h1>Test45</h1>
-<p>My own test2</p>
+{% for p in site.pages %}
+{% if p.type == "experiment" %}
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <a href="experiments/{{ p.id }}.html"><img src="experiments/thumbnails/{{ p.id }}.jpg" alt="Experiment thumbnail" class="experiment-thumbnail img-rounded"></a>
+          <div class="caption">
+            <h3>{{ p.experiment_name }}</h3>
+          </div>
+        </div>
+      </div>
+{% endif %}
+{% endfor %}
