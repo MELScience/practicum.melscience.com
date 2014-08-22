@@ -1,50 +1,49 @@
 ﻿{% include top.html %}
 <body>
-  <h1><a href="../">Experiments</a> - {{ page.experiment_name }}</h1>
+  <h1><a href="../reagents.html">Reagents</a> - {{ page.reagent_name }}</h1>
     <div class="container">
 
 <p>
-<a href="https://github.com/MELScience/melscience.github.io/edit/master/experiments/{{ page.name }}">Edit</a>
+<a href="https://github.com/MELScience/melscience.github.io/edit/master/reagents/{{ page.name }}">Edit</a>
 </p>
 
-<h2>Description</h2>
+<h1>{{ page.reagent_name }} ({{ page.formula }})</h1>
+
 <p>
-{{ page.description | markdownify  }}
+  <a href="{{ page.wikipedia }}">Wikipedia article about {{ page.reagent_name }}</a><br>
+  Substance: {{ page.substance_name }}<br>
+  Also known as: 
+  {% for another_name in page.other_names %}
+    {{ another_name }}, 
+  {% endfor %}
 </p>
 
-<h2>Reaction Formula</h2>
 <p>
-{{ page.reaction }}
+{% assign reagent_page = page %}
+{% include nfpa_sign.html %}
 </p>
 
-<h2>Safety</h2>
-<p>
-{{ page.safety | markdownify }}
-</p>
-
-<h2>Reagents</h2>
-<ol>
-{% for reagent in page.reagents %}
-{% for reagent_page in site.pages %}
-{% if reagent_page.id == reagent %}
-  <li><a href="../reagents/{{ reagent_page.id }}.html">{{ reagent_page.reagent_name }} ({{ reagent_page.formula }})</a></li>
-{% endif %}
-{% endfor %}
-{% endfor %}
-</ol>
-
-<h2>Read More</h2>
+<h2>Risk Phrases</h2>
 <ul>
-{% for link in page.links %}
-  <li><a href="{{ link.link }}">{{ link.title }}</a></li>
+{% for rphrase_code in page.risk_phrases %}
+<li>{{ rphrase_code }}: {% include rphrase.html %}</li>
 {% endfor %}
 </ul>
 
-<h2>YouTube Videos</h2>
-{% for video in page.youtube_videos %}
-<iframe width="560" height="315" src="//www.youtube.com/embed/{{ video.link | replace:'https://www.youtube.com/watch?v=','' | replace:'http://www.youtube.com/watch?v=','' }} " frameborder="0" allowfullscreen></iframe>
+<h2>Safity Phrases</h2>
+<ul>
+{% for sphrase_code in page.safity_phrases %}
+<li>{{ sphrase_code }}: {% include sphrase.html %}</li>
+{% endfor %}
+</ul>
+
+<h2>Download MSDS</h2>
+<ul>
+{% for msds_link in page.msds %}
+  <li><a href="{{ msds_link }}">{{ msds_link }}</a></li>
 {% endfor %}
 
+</ul>
   {{ content }}
 
 
