@@ -1,16 +1,63 @@
 ﻿{% include top.html %}
 <body>
-  <h1>{{ page.experiment_name }}</h1>
+  <h1><a href="../">Experiments</a> - {{ page.experiment_name }}</h1>
     <div class="container">
 
+<h2>Description</h2>
+<p>
+{{ page.description | markdownify  }}
+</p>
+
+<h2>Reaction Formula</h2>
+<p>
+{{ page.reaction }}
+</p>
+
+<h2>Safety</h2>
+<p>
+{{ page.safety | markdownify }}
+</p>
+
 <h2>Reagents</h2>
-<ul>
+<ol>
 {% for reagent in page.reagents %}
 {% for reagent_page in site.pages %}
-{% if reagent_page.id == reagent.id %}
-  <li>{{ reagent.id }} , {{ reagent_page.reagent_name }}</li>
+{% if reagent_page.id == reagent %}
+  <li><a href="../reagents/{{ reagent.id }}.html">{{ reagent_page.reagent_name }} ({{ reagent_page.formula }})</a><br>
+      <p>
+        Substance: <a href="{{ reagent_page.wikipedia }}">{{ reagent_page.substance_name }}</a><br>
+        Also known as: 
+        {% for another_name in reagent_page.other_names %}
+          {{ another_name }}, 
+        {% endfor %}
+        <br>
+{% include nfpa_sign.html %}
+      Risk phrase: 
+<ul>
+{% for rphrase_code in reagent_page.risk_phrases %}
+<li>{{ rphrase_code }}: {% include rphrase.html %}</li>
+{% endfor %}
+</ul>
+<br>
+      Safity phrase: 
+<ul>
+{% for sphrase_code in reagent_page.safity_phrases %}
+<li>{{ sphrase_code }}: {% include sphrase.html %}</li>
+{% endfor %}
+</ul>
+<br>
+      <a href="{{ reagent_page.msds }}">Download MSDN</a>
+      </p>
+  </li>
 {% endif %}
 {% endfor %}
+{% endfor %}
+</ol>
+
+<h2>Read More</h2>
+<ul>
+{% for link in page.links %}
+  <li><a href="{{ link.link }}">{{ link.title }}</a></li>
 {% endfor %}
 </ul>
 

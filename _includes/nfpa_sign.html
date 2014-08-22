@@ -1,0 +1,53 @@
+{% assign flammability_phrase = "" %}
+{% if reagent_page.nfpa_flammability == 0 %}{% assign flammability_phrase = "Flammability code 0: Will not burn. E.g., water" %}{% endif %}
+{% if reagent_page.nfpa_flammability == 1 %}{% assign flammability_phrase = "Flammability code 1: Must be pre-heated before ignition can occur. Flash point over 93 &deg;C (200 &deg;F). E.g., canola oil" %}{% endif %}
+{% if reagent_page.nfpa_flammability == 2 %}{% assign flammability_phrase = "Flammability code 2: Must be moderately heated or exposed to relatively high ambient temperature before ignition can occur. Flash point between 38 and 93 &deg;C (100 and 200 &deg;F). E.g., diesel fuel" %}{% endif %}
+{% if reagent_page.nfpa_flammability == 3 %}{% assign flammability_phrase = "Flammability code 3: Liquids and solids that can be ignited under almost all ambient temperature conditions. Flash point between 23 and 38 &deg;C (73 and 100 &deg;F). E.g., gasoline)" %}{% endif %}
+{% if reagent_page.nfpa_flammability == 4 %}{% assign flammability_phrase = "Flammability code 4: Will rapidly or completely vaporize at normal atmospheric pressure and temperature, or is readily dispersed in air and will burn readily. Flash point below 23 &deg;C (73 &deg;F). E.g., propane" %}{% endif %}
+
+{% assign health_phrase = "" %}
+{% if reagent_page.nfpa_health == 0 %}{% assign health_phrase = "Health code 0: Exposure under fire conditions would offer no hazard beyond that of ordinary combustible material. E.g., sodium chloride" %}{% endif %}
+{% if reagent_page.nfpa_health == 1 %}{% assign health_phrase = "Health code 1: Exposure would cause irritation but only minor residual injury. E.g., turpentine" %}{% endif %}
+{% if reagent_page.nfpa_health == 2 %}{% assign health_phrase = "Health code 2: Intense or continued but not chronic exposure could cause temporary incapacitation or possible residual injury. E.g., chloroform" %}{% endif %}
+{% if reagent_page.nfpa_health == 3 %}{% assign health_phrase = "Health code 3: Short exposure could cause serious temporary or residual injury. E.g., chlorine gas" %}{% endif %}
+{% if reagent_page.nfpa_health == 4 %}{% assign health_phrase = "Health code 4: Very short exposure could cause death or major residual injury. E.g., VX gas" %}{% endif %}
+
+{% assign reactivity_phrase = "" %}
+{% if reagent_page.nfpa_reactivity == 0 %}{% assign reactivity_phrase = "Reactivity code 0: Normally stable, even under fire exposure conditions, and is not reactive with water. E.g., liquid nitrogen" %}{% endif %}
+{% if reagent_page.nfpa_reactivity == 1 %}{% assign reactivity_phrase = "Reactivity code 1: Normally stable, but can become unstable at elevated temperatures and pressures. E.g., calcium" %}{% endif %}
+{% if reagent_page.nfpa_reactivity == 2 %}{% assign reactivity_phrase = "Reactivity code 2: Undergoes violent chemical change at elevated temperatures and pressures, reacts violently with water, or may form explosive mixtures with water. E.g., phosphorus" %}{% endif %}
+{% if reagent_page.nfpa_reactivity == 3 %}{% assign reactivity_phrase = "Reactivity code 3: Capable of detonation or explosive decomposition but requires a strong initiating source, must be heated under confinement before initiation, reacts explosively with water, or will detonate if severely shocked. E.g., fluorine" %}{% endif %}
+{% if reagent_page.nfpa_reactivity == 4 %}{% assign reactivity_phrase = "Reactivity code 4: Readily capable of detonation or explosive decomposition at normal temperatures and pressures. E.g., nitroglycerin" %}{% endif %}
+
+{% assign special_phrase = "" %}
+{% if reagent_page.nfpa_special == "OX"   %}{% assign special_phrase = "Special hazard OX: Oxidizer. E.g., potassium perchlorate" %}{% endif %}
+{% if reagent_page.nfpa_special == "W"    %}{% assign special_phrase = "Special hazard W: Reacts with water in an unusual or dangerous manner. E.g., cesium, sodium" %}{% endif %}
+{% if reagent_page.nfpa_special == "SA"   %}{% assign special_phrase = "Special hazard SA: Simple asphyxiant gas. E.g., nitrogen, helium" %}{% endif %}
+{% if reagent_page.nfpa_special == "COR"  %}{% assign special_phrase = "Special hazard COR: Corrosive; strong acid or base. E.g., sulfuric acid, potassium hydroxide" %}{% endif %}
+{% if reagent_page.nfpa_special == "BIO"  %}{% assign special_phrase = "Special hazard BIO: Biohazardous. E.g., smallpox virus" %}{% endif %}
+{% if reagent_page.nfpa_special == "CRYO" %}{% assign special_phrase = "Special hazard CRYO: Cryogenic." %}{% endif %}
+{% if reagent_page.nfpa_special == "ACID" %}{% assign special_phrase = "Special hazard ACID: Acid." %}{% endif %}
+{% if reagent_page.nfpa_special == "ALK"  %}{% assign special_phrase = "Special hazard ALK: Alkaline." %}{% endif %}
+{% if reagent_page.nfpa_special == "RA"   %}{% assign special_phrase = "Special hazard RA: Radioactive. E.g., plutonium" %}{% endif %}
+{% if reagent_page.nfpa_special == "WOX"  %}{% assign special_phrase = "Special hazard W+OX: Reacts with water in an unusual or dangerous manner AND is oxidizer." %}{% endif %}
+
+<div class="nfpa-sign" style="width: 150px">
+  <div>
+  <div id="container" style="margin:0 auto; width:82px; font-family:sans-serif">
+  <div id="on_image_elements" class="nounderlines" style="background:; font-size:20px; text-align:center; vertical-align:middle; position:relative; height:80px; width:80px; padding:1px;">
+  <div id="diamond_image_and_mw_ImageMap" style="position:absolute; height:80px; width:80px;">
+  <div class="noresize"><map name="ImageMap_1_2127047198" id="ImageMap_1_2127047198">
+  <area href="/wiki/NFPA_704#Red" shape="poly" coords="40,0,60,20,40,40,20,20" alt="{{ flammability_phrase }}" title="{{ flammability_phrase }}" />
+  <area href="/wiki/NFPA_704#Blue" shape="poly" coords="20,20,40,40,20,60,0,40" alt="{{ health_phrase }}" title="{{ health_phrase }}" />
+  <area href="/wiki/NFPA_704#Yellow" shape="poly" coords="60,20,80,40,60,60,40,40" alt="{{ reactivity_phrase }}" title="{{ reactivity_phrase }}" />
+  <area href="/wiki/NFPA_704#White" shape="poly" coords="40,40,60,60,40,80,20,60" alt="{{ special_phrase }}" /></map><img alt="NFPA 704 four-colored diamond" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/6f/NFPA_704.svg/80px-NFPA_704.svg.png" width="80" height="80" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/6f/NFPA_704.svg/120px-NFPA_704.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/6f/NFPA_704.svg/160px-NFPA_704.svg.png 2x" data-file-width="600" data-file-height="600" usemap="#ImageMap_1_2127047198" /></div>
+  </div>
+  <div style="width:12px; text-align:center; position:absolute; top:12px; left:35px;"><a href="/wiki/NFPA_704#Red" title="NFPA 704"><span style="color:black;" title="{{ flammability_phrase }}">{{ reagent_page.nfpa_flammability }}</span></a></div>
+  <div style="width:13px; text-align:center; position:absolute; top:31px; left:15px;"><a href="/wiki/NFPA_704#Blue" title="NFPA 704"><span style="color:black;" title="{{ health_phrase }}">{{ reagent_page.nfpa_health }}</span></a></div>
+  <div style="width:13px; text-align:center; position:absolute; top:31px; left:54px;"><a href="/wiki/NFPA_704#Yellow" title="NFPA 704"><span style="color:black;" title="{{ reactivity_phrase }}">{{ reagent_page.nfpa_reactivity }}</span></a></div>
+  <div style="vertical-align:middle; text-align:center; line-height:80%; position:absolute; top:52px;"><a href="/wiki/NFPA_704#White" title="NFPA 704"><span style="font-size:10px; color:black; width:30px; position:absolute; left:25px;" title="{{ special_phrase }}">{{ reagent_page.nfpa_special }}</span></a></div>
+  </div>
+  </div>
+  </div>
+</div>
+
