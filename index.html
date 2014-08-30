@@ -2,15 +2,40 @@
 title: MEL Science Chemistry Experiments
 layout: default
 ---
-{% for p in site.pages %}
-{% if p.type == "experiment" %}
+<div>
+{% for e in site.pages %}
+{% if e.type == "experiment" %}
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <a href="experiments/{{ p.id }}.html"><img src="experiments/thumbnails/{{ p.id }}.jpg" alt="Experiment thumbnail" class="experiment-thumbnail img-rounded"></a>
+          <a href="experiments/{{ e.id }}.html"><img src="experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" class="experiment-thumbnail img-rounded"></a>
           <div class="caption">
-            <h3>{{ p.experiment_name }}</h3>
+            <h3>{{ e.experiment_name }}</h3>
           </div>
         </div>
       </div>
 {% endif %}
 {% endfor %}
+</div>
+
+</h2>Categories</h2>
+<ul>
+{% for c in site.pages %}
+{% if c.type == "category" %}
+
+  {% assign any_experiment_in_category = 0 %}
+
+  {% for e in site.pages %}
+    {% if e.type == "experiment" %}
+      {% if e.category == c.id %}
+        {% assign any_experiment_in_category = 1 %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if any_experiment_in_category == 1 %}
+    <li><a href="categories/{{ c.id }}.html">{{ c.category_name }}</a></li>
+  {% endif %}
+
+{% endif %}
+{% endfor %}
+</ul>
