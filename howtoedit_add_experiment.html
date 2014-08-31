@@ -1,0 +1,195 @@
+---
+title: How to Edit An Experiment - MEL Science Chemistry Experiments
+layout: default
+---
+
+<style>
+h3 {margin-top: 70px;}
+</style>
+
+<h2>How to Add A New Experiment</h2>
+
+<h3>1. Create a GitHub account</h3>
+<p>
+If you already have a GitHub account you can skip this step. Go to <a href="https://github.com/">GitHub.com</a> and create a new account. Make sure you have your email addres verified - GitHub will send you an email to verify your email address and you should click a link in this email.
+</p>
+
+<h3>2. Fork MEL Science website repository</h3>
+<p>
+Open the MEL Science website repository at <a href="https://github.com/MELScience/melscience.github.io/">https://github.com/MELScience/melscience.github.io/</a> and click the <b>Fork</b> button on the top. It will create your own copy of the website (such copies called forks in GitHub). Since now on you will edit your own copy and only after you have made all the needed changes and test it you will add the changes to the main website.
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/03.png">
+</p>
+
+<h3>3. Create "gh-pages" branch</h3>
+<p>
+Before editing the website you need to make one more technical step: create a new branch called "gh-pages". It is needed to tell GitHub to handle this repository as a website which will be helpful for you in order to test how your changes look like on the website. Click the <b>branch: master</b> combobox and enter <b>gh-pages</b> in the appeared edit field to create a new branch. Please note that it is important that create branch has exactly this name.
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/05.png">
+</p>
+
+<h3>4. Open the "experiments" folder</h3>
+<p>
+After you have forked the website repository and created "gh-pages" branch open the "experiments" folder. 
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/06.png">
+</p>
+
+<h3>5. Create a new experiment file</h3>
+<p>
+Click the "+" link on the top of the "experiment" folder page. 
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/07.png">
+</p>
+
+<h3>6. Choose experiment file name</h3>
+<p>
+The experiment file name should be descriptive, all small letters, use "-" symbol between the words and end with ".html" file extension. Here are samples of good experiment file names:
+<ul>
+  <li>ammonium-chloride-smoke.html</li>
+  <li>burning-of-sugar-cube-with-ash-as-a-catalyst.html</li>
+  <li>catalytic-oxidation-of-acetone-on-copper-wire.html</li>
+  <li>flameless-burning-of-hexamine-fuel-tablet-with-cr2o3-as-a-catalyst.html</li>
+  <li>preparation-of-hydrogen-using-hydrochloric-acid-and-zinc.html</li>
+</ul> 
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/08.png">
+</p>
+
+<h3>7. Copy sample experiment text to the file</h3>
+<p>
+Copy the following sample experiment text to your just created file
+<pre>
+---
+id: preparation-of-hydrogen-using-aluminium-foil-and-sodium-hydroxide
+type: experiment
+experiment_name: [sample experiment name]
+category: gases
+reaction: [reaction formula here]
+description: |
+  [description here]
+explosion: 1
+color_change: 0
+fire: 1
+precipitate: 0
+gassing: 1
+smoke: 0
+catalyst: 0
+phases: liquid+solid+gas
+trick: 
+comments: 
+safety: |
+  [safety description here] 
+youtube_videos:
+  - link: http://www.youtube.com/watch?v=mnDgGbo63fw
+  - link: http://www.youtube.com/watch?v=LKGAfwC9EhU
+links:
+  - link: https://sites.google.com/site/chemlabchemistry/experiments-1/smoke-with-ammonia
+    title: "Smoke with ammonia 2"
+    language: en
+  - link: http://mattson.creighton.edu/NH3/index.html
+    title: "Experiment 7. Gaseous Ammonia Reacts with Gaseous Hydrogen Chloride"
+    language: en
+reagents: 
+  - hydrochloric-acid-concentrated
+  - ammonium-hydroxide-solution-30
+layout: experiment
+---
+</pre>
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/09.png">
+</p>
+
+<h3>8. Update experiment id and experiment name in the file</h3>
+<p>
+Copy/paste your file name without ".html" file extension to <b>id</b> value (the first line). Edit the <b>experiment_name</b> (the third line).
+</p>
+
+<h3>9. Save your changes</h3>
+<p>
+Press the <b>Commit new file</b> button on the bottom of the page. 
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/10.png">
+</p>
+
+<h3>10. Test the first draft version</h3>
+<p>
+Now a new experiment page is created. You can test it online in your copy. Its link is:
+<pre>
+https://[your_login].github.io/melscience.github.io/experiments/[your_page_name].html
+</pre>
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/13.png">
+</p>
+
+<h3>11. Edit experiment page</h3>
+<p>
+Now you are ready to actually add experiment information. Open the experiment page:
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/20.png">
+</p>
+
+<p>
+And click the edit icon just over the file text:
+</p>
+<p>
+<img src="images/howtoedit_add_experiment/21.png">
+</p>
+
+<h3>12. Edit: add links</h3>
+<p>
+Search for webpages that contain description of this experiment. Please include not more than 10 link and include only those webpages that contain experiment description not generic information about this reaction. For each link add the following three lines to the <b>links</b> section:
+<pre>
+  - link: [webpage_url_here]
+    title: "[webpage title here]"
+    language: en
+</pre>
+</p>
+<p>
+Add pages for the languages you understand. Use <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">2-letter 639-1 language codes</a>.
+</p>
+
+<h3>13. Edit: add YouTube videos</h3>
+<p>
+Search for YouTube videos about this experiment. For each video add one line to the <b>youtube_videos</b> section:
+<pre>
+  - link: http://www.youtube.com/watch?v=[youtube_video_id]
+</pre>
+</p>
+<p>
+Please remove all unneeded parameters from YouTube URL. URL must be only in the form as above.
+</p>
+
+<h3>14. Edit: description</h3>
+<p>
+Add experiment description that contains information how to make this experiment and some science background. Please check other experiment descriptions for the style. You can use <a href="http://en.wikipedia.org/wiki/Markdown">markdown</a> in the description.
+</p>
+
+<h3>15. Edit: category</h3>
+<p>
+Select one of <a href="https://github.com/MELScience/melscience.github.io/tree/master/categories">the following categories</a> for the experiment and add it to the <b>category</b> field.
+</p>
+
+<h3>16. Edit: reaction formula</h3>
+<p>
+Put <a href="http://en.wikipedia.org/wiki/Chemical_equation">reaction formula</a> into the <b>reaction</b> field. Please use the following notations:
+<ul>
+  <li>Use ↑ symbol for appeared gases</li>
+  <li>Use ↓ symbol for precipitate</li>
+  <li>Use <b>=[catalyst]=</b> to show that this reaction require a catalyst, add catalyst name instead of <b>catalyst</b> (for example: <b>=[Pt]=</b>)</li>
+</ul>
+</p>
+
+<h3>17. Edit: reagents</h3>
+<p>
+Check if the needed reagents are already described in <a href="https://github.com/MELScience/melscience.github.io/tree/master/reagents">the list of reagents</a>.  If not <a href="howtoedit_add_reagent.html">create new reagent pages</a> for missed reagents. Add list of all used reagent ids into the <b>reagents</b> section. 
+</p>
