@@ -16,7 +16,8 @@ layout: mainpage
             <h1>Chemistry Demonstrations</h1>
             <p>A database of chemistry experiments that everyone can edit. If you know any chemistry demonstration not listed here you can add it.</p>
           </div>
-          <div class="row" style="margin-bottom: 20px; padding-right: 30px;">
+          <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
+            <a href="/edit/add_experiment.html" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Experiment</a>
             <div class="btn-group pull-right">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 All Categories <span class="caret"></span>
@@ -45,6 +46,7 @@ layout: mainpage
             {% endfor %}
               </ul>
             </div>
+            </span>
           </div>
 
 {% for e in site.pages %}
