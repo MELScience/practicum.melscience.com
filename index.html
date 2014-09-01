@@ -13,19 +13,44 @@ layout: default
 }
 </style>
 
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
           <div class="jumbotron">
             <h1>Chemistry Demonstrations</h1>
             <p>A database of chemistry experiments that everyone can edit. If you know any chemistry demonstration not listed here you can add it.</p>
           </div>
-          <div class="row">
+          <div class="row" style="margin-bottom: 20px; padding-right: 30px;">
+            <div class="btn-group pull-right">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                All Categories <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/">All Categories</a></li>
+                <li class="divider"></li>
+            {% for c in site.pages %}
+            {% if c.type == "category" %}
+
+              {% assign any_experiment_in_category = 0 %}
+
+              {% for e in site.pages %}
+                {% if e.type == "experiment" %}
+                  {% if e.category == c.id %}
+                    {% assign any_experiment_in_category = 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+
+              {% if any_experiment_in_category == 1 %}
+                <li><a href="categories/{{ c.id }}.html">{{ c.category_name | capitalize }}</a></li>
+              {% endif %}
+
+            {% endif %}
+            {% endfor %}
+              </ul>
+            </div>
+          </div>
 
 {% for e in site.pages %}
 {% if e.type == "experiment" %}          
-            <div class="col-6 col-sm-6 col-lg-4">
+            <div class="col-4 col-sm-4 col-lg-3">
               <div class="panel panel-default">
                 <a href="experiments/{{ e.id }}.html"><img src="experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a>
                 <div class="panel-heading" style="background-color: white; height: 80px;">
@@ -36,32 +61,3 @@ layout: default
 {% endif %}
 {% endfor %}
 
-          </div><!--/row-->
-        </div><!--/span-->
-
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">All</a>
-
-{% for c in site.pages %}
-{% if c.type == "category" %}
-
-  {% assign any_experiment_in_category = 0 %}
-
-  {% for e in site.pages %}
-    {% if e.type == "experiment" %}
-      {% if e.category == c.id %}
-        {% assign any_experiment_in_category = 1 %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-
-  {% if any_experiment_in_category == 1 %}
-    <a href="categories/{{ c.id }}.html" class="list-group-item">{{ c.category_name | capitalize }}</a>
-  {% endif %}
-
-{% endif %}
-{% endfor %}
-
-          </div>
-        </div><!--/span-->
