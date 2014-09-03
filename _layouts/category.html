@@ -10,7 +10,11 @@
   -webkit-border-bottom-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-</style>    
+
+div.animated-by-hover div.animated-image {display: none}
+div.animated-by-hover:hover div.animated-image {display: block}
+div.animated-by-hover:hover div.static-image {display: none}
+</style>
   </head>
 
   <body style="background-color: rgb(240,240,240)">
@@ -55,7 +59,10 @@
 {% if e.category == page.id %}
             <div class="col-4 col-sm-4 col-lg-3">
               <div class="panel panel-default">
-                <a href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a>
+                <div class="animated-by-hover">
+                  <div class="static-image"><a href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                  <div class="animated-image"><a href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.gif" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                </div>
                 <div class="panel-heading" style="background-color: white; height: 80px;">
                   <h3 class="panel-title"><a href="../experiments/{{ e.id }}.html">{{ e.experiment_name }}</a></h3>
                 </div>

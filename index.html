@@ -29,25 +29,7 @@ div.animated-by-hover:hover div.static-image {display: none}
               <ul class="dropdown-menu" role="menu">
                 <li><a href="/">All Categories</a></li>
                 <li class="divider"></li>
-            {% for c in site.pages %}
-            {% if c.type == "category" %}
-
-              {% assign any_experiment_in_category = 0 %}
-
-              {% for e in site.pages %}
-                {% if e.type == "experiment" %}
-                  {% if e.category == c.id %}
-                    {% assign any_experiment_in_category = 1 %}
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-
-              {% if any_experiment_in_category == 1 %}
-                <li><a href="categories/{{ c.id }}.html">{{ c.category_name | capitalize }}</a></li>
-              {% endif %}
-
-            {% endif %}
-            {% endfor %}
+{% for c in site.pages %}{% if c.type == "category" %}{% assign any_experiment_in_category = 0 %}{% for e in site.pages %}{% if e.type == "experiment" %}{% if e.category == c.id %}{% assign any_experiment_in_category = 1 %}{% endif %}{% endif %}{% endfor %}{% if any_experiment_in_category == 1 %}<li><a href="categories/{{ c.id }}.html">{{ c.category_name | capitalize }}</a></li>{% endif %}{% endif %}{% endfor %}
               </ul>
             </div>
             </span>
