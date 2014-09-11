@@ -1,6 +1,7 @@
 ---
 layout: blog-post
 title: Looking for a greenhouse
+type: blog-post
 ---
 
 # {{ page.title }}

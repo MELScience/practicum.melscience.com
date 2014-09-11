@@ -1,6 +1,7 @@
 ---
 layout: blog-post
 title: What kind of programmer I am looking for
+type: blog-post
 ---
 
 # {{ page.title }}

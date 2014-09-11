@@ -1,6 +1,7 @@
 ---
 layout: all-experiments
 title: Here goes! Looking for a quantum chemist
+type: blog-post
 ---
 
 # {{ page.title }}

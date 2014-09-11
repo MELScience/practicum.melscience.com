@@ -1,6 +1,7 @@
 ---
 layout: blog-post
 title: What we are going to do + 3D designer
+type: blog-post
 ---
 
 # {{ page.title }}
