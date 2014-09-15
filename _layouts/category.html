@@ -14,6 +14,23 @@
 div.animated-by-hover div.animated-image {display: none}
 div.animated-by-hover:hover div.animated-image {display: block}
 div.animated-by-hover:hover div.static-image {display: none}
+
+.square-container {
+  position: relative;
+  width: 100%;   /* desired width */
+}
+.square-container:before {
+  content: "";
+  display: block;
+  padding-top: 100%;  /* initial ratio of 1:1*/
+}
+.square-content {
+  position:  absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 </style>
   </head>
 
@@ -23,8 +40,7 @@ div.animated-by-hover:hover div.static-image {display: none}
     <div class="container">
 
 <ol class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li><a href="/experiments/">Experiments</a></li>
+  <li><a href="/">Chemistry Experiments</a></li>
   <li class="active"><span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ page.category_name | capitalize }}</span></li>
   <span class="pull-right">
     <a href="https://github.com/MELScience/melscience.github.io/edit/master/categories/{{ page.name }}" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-pencil"></span> Edit</a>
@@ -41,8 +57,8 @@ div.animated-by-hover:hover div.static-image {display: none}
             <div class="col-4 col-sm-4 col-lg-3">
               <div class="panel panel-default">
                 <div class="animated-by-hover">
-                  <div class="static-image"><a href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
-                  <div class="animated-image"><a href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.gif" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                  <div class="static-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                  <div class="animated-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.gif" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
                 </div>
                 <div class="panel-heading" style="background-color: white; height: 80px;">
                   <h3 class="panel-title"><a href="../experiments/{{ e.id }}.html">{{ e.experiment_name }}</a></h3>
