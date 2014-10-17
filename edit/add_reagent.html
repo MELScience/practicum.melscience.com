@@ -1,0 +1,353 @@
+---
+title: How to Add A Reagent
+layout: edit
+---
+
+<h3>1. Create a GitHub account</h3>
+<p>
+If you already have a GitHub account you can skip this step. Go to <a href="https://github.com/">GitHub.com</a> and create a new account. Make sure you have your email addres verified - GitHub will send you an email to verify your email address and you should click a link in this email.
+</p>
+
+<h3>2. Fork MEL Science website repository</h3>
+<p>
+Open the MEL Science website repository at <a href="https://github.com/MELScience/melscience.github.io/">https://github.com/MELScience/melscience.github.io/</a> and click the <b>Fork</b> button on the top. It will create your own copy of the website (such copies called forks in GitHub). Since now on you will edit your own copy and only after you have made all the needed changes and test it you will add the changes to the main website.
+</p>
+<p>
+<img src="/images/edit/fork.png">
+</p>
+
+<h3>3. Create "gh-pages" branch</h3>
+<p>
+Before editing the website you need to make one more technical step: create a new branch called "gh-pages". It is needed to tell GitHub to handle this repository as a website which will be helpful for you in order to test how your changes look like on the website. Click the <b>branch: master</b> combobox and enter <b>gh-pages</b> in the appeared edit field to create a new branch. Please note that it is important that create branch has exactly this name.
+</p>
+<p>
+<img src="/images/edit/create_gh_branch.png">
+</p>
+
+<h3>4. Open the "reagents" folder</h3>
+<p>
+After you have forked the website repository and created "gh-pages" branch open the "reagents" folder. 
+</p>
+<p>
+<img src="/images/edit/add_reagent/01.png">
+</p>
+
+<h3>5. Create a new reagent file</h3>
+<p>
+Click the "+" link on the top of the "reagent" folder page. 
+</p>
+<p>
+<img src="/images/edit/add_reagent/02.png">
+</p>
+
+<h3>6. Choose reagent file name</h3>
+<p>
+The reagent file name should be descriptive, all small letters, use "-" symbol between the words and end with ".html" file extension. If the reagent is a solution add information about concentration to its id. Here are samples of good reagent file names:
+<ul>
+  <li>ammonium-hydroxide-solution-30.html</li>
+  <li>hexamine-fuel-tablet.html</li>
+  <li>hydrochloric-acid-concentrated.html</li>
+  <li>hydrochloric-acid-solution-10.html</li>
+  <li>steel-wool.html</li>
+  <li>tin-2-chloride.html</li>
+</ul> 
+</p>
+<p>
+<img src="/images/edit/add_reagent/03.png">
+</p>
+
+<h3>7. Copy sample reagent text into the file</h3>
+<p>
+Copy the following sample experiment text into your just created file
+<pre>
+---
+id: [reagent-id]
+type: reagent
+reagent_name: [reagent name]
+substance_name: [substance name]
+formula: [substance formula]
+form: [reagent form such as solution, powder, wire, granules, etc]
+chemspider_id: [id in chemspider database]
+wikipedia: [link to the wikipedia article about this reagent]
+nfpa_health: [nfpa health index (0, 1, 2, 3 or 4)]
+nfpa_flammability: [nfpa flammability index (0, 1, 2, 3 or 4)]
+nfpa_reactivity: [nfpa reactivity index (0, 1, 2, 3 or 4)]
+nfpa_special: ACID
+risk_phrases: [R23, R35]
+safity_phrases: [S1/2, S9, S26, S36/37/39, S45]
+msds: 
+  - [link to a MSDS page/file 1]
+  - [link to a MSDS page/file 2]
+  - [link to a MSDS page/file 3]
+ld50: [median lethal dose in milligrams per killogram]  
+hazard_symbol: [hazard symbol]
+other_names:
+  - [another reagent name 1]
+  - [another reagent name 2]
+layout: reagent
+---
+</pre>
+</p>
+<p>
+<img src="/images/edit/add_reagent/04.png">
+</p>
+
+<h3>8. Update reagent id and reagent name in the file</h3>
+<p>
+Copy/paste your file name without ".html" file extension to <b>id</b> value (the first line). Edit the <b>reagent_name</b> (the third line). Try to make a describing reagent name. Reagent name should start with a small letter. If the reagent is a solution add information about concentration to its name.
+</p>
+
+<h3>9. Save your changes</h3>
+<p>
+Press the <b>Commit new file</b> button on the bottom of the page. 
+</p>
+<p>
+<img src="/images/edit/add_reagent/05.png">
+</p>
+
+<h3>10. Test the first draft version</h3>
+<p>
+Now a new reagent page is created. You can test it online in your copy. Its link is:
+<pre>
+https://[your_login].github.io/melscience.github.io/reagents/[your_page_name].html
+</pre>
+</p>
+<p>
+<img src="/images/edit/add_reagent/new.png">
+</p>
+
+<h3>11. Edit reagent page</h3>
+<p>
+Now you are ready to actually add reagent information. Open the reagent page:
+</p>
+<p>
+<img src="/images/edit/add_reagent/06.png">
+</p>
+
+<p>
+And click the edit icon just over the file text:
+</p>
+<p>
+<img src="/images/edit/add_reagent/07.png">
+</p>
+
+<h3>12. Edit: add Wikipedia link</h3>
+<p>
+Replace <b>[link to the wikipedia article about this reagent]</b> with Wikipedia link of the English article about this reagent.
+</p>
+
+<h3>13. Edit: add substance name</h3>
+<p>
+Sometimes a reagent is one particular form of a substance that is available in other forms. For example a reagent could be a solution of a particular solt, <b>substance</b> in that case would be name of the solt itself. Sometimes <b>reagent_name</b> and <b>substance_name</b> are the same. 
+</p>
+<p>
+Here are few examples:
+<table class="table table-bordered">
+<tr>
+  <th>reagent_name</th>
+  <th>substance_name</th>
+</tr>
+<tr>
+  <td>acetone</td>
+  <td>acetone</td>
+</tr>
+<tr>
+  <td>aluminium foil</td>
+  <td>aluminium</td>
+</tr>
+<tr>
+  <td>ammonium hydroxide solution 30%</td>
+  <td>ammonium hydroxide</td>
+</tr>
+<tr>
+  <td>barium chloride</td>
+  <td>barium chloride</td>
+</tr>
+<tr>
+  <td>copper wire</td>
+  <td>copper</td>
+</tr>
+<tr>
+  <td>hexamine fuel tablet</td>
+  <td>hexamethylenetetramine</td>
+</tr>
+<tr>
+  <td>hydrochloric acid concentrated</td>
+  <td>hydrogen chloride</td>
+</tr>
+<tr>
+  <td>hydrochloric acid solution 10%</td>
+  <td>hydrogen chloride</td>
+</tr>
+<tr>
+  <td>malachite</td>
+  <td>copper(II) carbonate basic</td>
+</tr>
+<tr>
+  <td>potassium sulfate</td>
+  <td>potassium sulfate</td>
+</tr>
+<tr>
+  <td>steel wool</td>
+  <td>iron</td>
+</tr>
+</table>
+</p>
+
+<h3>14. Edit: add molecular formula</h3>
+<p>
+Replace <b>[substance formula]</b> with reagent molecular formula.
+</p>
+
+<h3>15. Edit: add reagent form</h3>
+<p>
+The same substance could come in different forms. Sometimes it is important for an experiment in which form it is. We consider different forms as different reagents. 
+Replace <b>[reagent form such as solution, powder, wire, granules, etc]</b> with one of the following forms:
+<table class="table table-bordered">
+<tr>
+  <th>Name</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>liquid</td>
+  <td>If liquid is a natural form for this substance</td>
+</tr>
+<tr>
+  <td>solution</td>
+  <td></td>
+</tr>
+<tr>
+  <td>powder</td>
+  <td>Solid substance in form of powder</td>
+</tr>
+<tr>
+  <td>foil</td>
+  <td></td>
+</tr>
+<tr>
+  <td>wire</td>
+  <td></td>
+</tr>
+<tr>
+  <td>granules</td>
+  <td></td>
+</tr>
+<tr>
+  <td>solid</td>
+  <td>Other forms of solid substance</td>
+</tr>
+</table> 
+</p>
+
+<h3>16. Edit: add ChemSpider ID</h3>
+<p>
+Find your reagent in <a href="http://www.chemspider.com/">ChemSpider</a> database. Replace <b>[id in chemspider database]</b> with ChemSpider ID.
+</p>
+
+<h3>17. Edit: add links to MSDS pages</h3>
+<p>
+Search for MSDS pages for this reagent. Briefly read each page before adding it to make sure it is about the reagent you are adding. Add links to the <b>msds</b> sections.
+</p>
+
+<h3>17. Edit: add NFPA information</h3>
+<p>
+Chech MSDS pages you have found before to find <a href="http://en.wikipedia.org/wiki/NFPA_704">NFPA 704</a> safety codes for the reagent. Find Flammability, Health, Instability/reactivity and Special notice and add them to the corresponding sections. If different sources provide different information be on the safe side.
+</p>
+<p>
+<b>nfpa_special</b> should have one of the following values or empty:
+<ul
+<li>OX</li>
+<li>W</li>
+<li>SA</li>
+<li>COR</li>
+<li>BIO</li>
+<li>CRYO</li>
+<li>ACID</li>
+<li>ALK</li>
+<li>RA</li>
+<li>WOX</li>
+</ul>
+</p>
+
+<h3>18. Edit: add LD50 information</h3>
+<p>
+Chech MSDS pages you have found before to find <a href="http://en.wikipedia.org/wiki/Median_lethal_dose">LD50</a> information. Replace <b>[median lethal dose in milligrams per killogram]</b> with a number of milligrams of LD50 per killogram. If different MSDS sheets provide different numbers be on the safe side.
+</p>
+
+<h3>19. Edit: add risk phrases and safety phrases</h3>
+<p>
+Chech MSDS pages you have found before to find <a href="http://en.wikipedia.org/wiki/List_of_R-phrases">risk phrases</a> and <a href="http://en.wikipedia.org/wiki/List_of_S-phrases">safety phrases</a> for this reagent. See the examples below:
+</p>
+<p>
+<b>barium chloride:</b>
+<pre>
+risk_phrases: [R20, R25]
+safity_phrases: [S1/2, S45]
+</pre>
+</p>
+<p>
+<b>platinum wire:</b>
+<pre>
+risk_phrases: []
+safity_phrases: []
+</pre>
+</p>
+<p>
+<b>tin(II) chloride:</b>
+<pre>
+risk_phrases: [R22, R34, R43]
+safity_phrases: [S26, S36/37/39, S45]
+</pre>
+</p>
+
+<h3>19. Edit: add risk phrases and safety phrases</h3>
+<p>
+Chech MSDS pages you have found before to find <a href="http://en.wikipedia.org/wiki/List_of_R-phrases">risk phrases</a> and <a href="http://en.wikipedia.org/wiki/List_of_S-phrases">safety phrases</a> for this reagent. If you cannot find these phrases in MSDS google for it. See the examples below:
+</p>
+<p>
+<b>barium chloride:</b>
+<pre>
+risk_phrases: [R20, R25]
+safity_phrases: [S1/2, S45]
+</pre>
+</p>
+<p>
+<b>platinum wire:</b>
+<pre>
+risk_phrases: []
+safity_phrases: []
+</pre>
+</p>
+<p>
+<b>tin(II) chloride:</b>
+<pre>
+risk_phrases: [R22, R34, R43]
+safity_phrases: [S26, S36/37/39, S45]
+</pre>
+</p>
+
+<h3>20. Edit: add hazard symbol information</h3>
+<p>
+Chech MSDS pages you have found before to find <a href="http://en.wikipedia.org/wiki/List_of_R-phrases">risk phrases</a> and <a href="http://en.wikipedia.org/wiki/List_of_S-phrases">safety phrases</a> for this reagent. See the examples below:
+</p>
+<p>
+<b>barium chloride:</b>
+<pre>
+risk_phrases: [R20, R25]
+safity_phrases: [S1/2, S45]
+</pre>
+</p>
+<p>
+<b>platinum wire:</b>
+<pre>
+risk_phrases: []
+safity_phrases: []
+</pre>
+</p>
+<p>
+<b>tin(II) chloride:</b>
+<pre>
+risk_phrases: [R22, R34, R43]
+safity_phrases: [S26, S36/37/39, S45]
+</pre>
+</p>

@@ -1,5 +1,5 @@
 ﻿{% include top.html %}
-    <title>{{ page.title }} - MEL Chemistry</title>
+    <title>{{ page.title }} - Edit - MEL Chemistry</title>
   </head>
 
   <body style="background-color: rgb(240,240,240)">
@@ -7,7 +7,20 @@
 
     <div class="container">
 
+<ol class="breadcrumb">
+  <li><a href="/">Chemistry Experiments</a></li>
+  <li><a href="/edit/">Edit</a></li>
+  <li class="active"><span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ page.title }}</span></li>
+</ol>
+
       <div class="row row-offcanvas row-offcanvas-right">
+
+<style>
+h3 {margin-top: 70px;}
+</style>
+
+<h2>{{ page.title }}</h2>
+
 
   {{ content }}
 

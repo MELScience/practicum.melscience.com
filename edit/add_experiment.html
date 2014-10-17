@@ -1,13 +1,7 @@
 ---
-title: How to Add An Experiment - Edit
+title: How to Add An Experiment
 layout: edit
 ---
-
-<style>
-h3 {margin-top: 70px;}
-</style>
-
-<h2>How to Add A New Experiment</h2>
 
 <h3>1. Create a GitHub account</h3>
 <p>
@@ -19,7 +13,7 @@ If you already have a GitHub account you can skip this step. Go to <a href="http
 Open the MEL Science website repository at <a href="https://github.com/MELScience/melscience.github.io/">https://github.com/MELScience/melscience.github.io/</a> and click the <b>Fork</b> button on the top. It will create your own copy of the website (such copies called forks in GitHub). Since now on you will edit your own copy and only after you have made all the needed changes and test it you will add the changes to the main website.
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/03.png">
+<img src="/images/edit/fork.png">
 </p>
 
 <h3>3. Create "gh-pages" branch</h3>
@@ -27,7 +21,7 @@ Open the MEL Science website repository at <a href="https://github.com/MELScienc
 Before editing the website you need to make one more technical step: create a new branch called "gh-pages". It is needed to tell GitHub to handle this repository as a website which will be helpful for you in order to test how your changes look like on the website. Click the <b>branch: master</b> combobox and enter <b>gh-pages</b> in the appeared edit field to create a new branch. Please note that it is important that create branch has exactly this name.
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/05.png">
+<img src="/images/edit/create_gh_branch.png">
 </p>
 
 <h3>4. Open the "experiments" folder</h3>
@@ -35,7 +29,7 @@ Before editing the website you need to make one more technical step: create a ne
 After you have forked the website repository and created "gh-pages" branch open the "experiments" folder. 
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/06.png">
+<img src="/images/edit/add_experiment/06.png">
 </p>
 
 <h3>5. Create a new experiment file</h3>
@@ -43,7 +37,7 @@ After you have forked the website repository and created "gh-pages" branch open 
 Click the "+" link on the top of the "experiment" folder page. 
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/07.png">
+<img src="/images/edit/add_experiment/07.png">
 </p>
 
 <h3>6. Choose experiment file name</h3>
@@ -58,12 +52,12 @@ The experiment file name should be descriptive, all small letters, use "-" symbo
 </ul> 
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/08.png">
+<img src="/images/edit/add_experiment/08.png">
 </p>
 
-<h3>7. Copy sample experiment text to the file</h3>
+<h3>7. Copy sample experiment text into the file</h3>
 <p>
-Copy the following sample experiment text to your just created file
+Copy the following sample experiment text into your just created file
 <pre>
 ---
 id: preparation-of-hydrogen-using-aluminium-foil-and-sodium-hydroxide
@@ -103,7 +97,7 @@ layout: experiment
 </pre>
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/09.png">
+<img src="/images/edit/add_experiment/09.png">
 </p>
 
 <h3>8. Update experiment id and experiment name in the file</h3>
@@ -116,7 +110,7 @@ Copy/paste your file name without ".html" file extension to <b>id</b> value (the
 Press the <b>Commit new file</b> button on the bottom of the page. 
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/10.png">
+<img src="/images/edit/add_experiment/10.png">
 </p>
 
 <h3>10. Test the first draft version</h3>
@@ -127,7 +121,7 @@ https://[your_login].github.io/melscience.github.io/experiments/[your_page_name]
 </pre>
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/13.png">
+<img src="/images/edit/add_experiment/13.png">
 </p>
 
 <h3>11. Edit experiment page</h3>
@@ -135,14 +129,14 @@ https://[your_login].github.io/melscience.github.io/experiments/[your_page_name]
 Now you are ready to actually add experiment information. Open the experiment page:
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/20.png">
+<img src="/images/edit/add_experiment/20.png">
 </p>
 
 <p>
 And click the edit icon just over the file text:
 </p>
 <p>
-<img src="/images/howtoedit_add_experiment/21.png">
+<img src="/images/edit/add_experiment/21.png">
 </p>
 
 <h3>12. Edit: add links</h3>
@@ -155,7 +149,10 @@ Search for webpages that contain description of this experiment. Please include 
 </pre>
 </p>
 <p>
-Add pages for the languages you understand. Use <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">2-letter 639-1 language codes</a>.
+Add pages for the languages you understand. Use <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">2-letter 639-1 language codes</a>. 
+</p>
+<p>
+If this webpage contains several experiments please add title of the needed experiment to make it easier to find it on the webpage.
 </p>
 
 <h3>13. Edit: add YouTube videos</h3>
@@ -169,14 +166,18 @@ Search for YouTube videos about this experiment. For each video add one line to 
 Please remove all unneeded parameters from YouTube URL. URL must be only in the form as above.
 </p>
 
+
 <h3>14. Edit: description</h3>
 <p>
-Add experiment description that contains information how to make this experiment and some science background. Please check other experiment descriptions for the style. You can use <a href="http://en.wikipedia.org/wiki/Markdown">markdown</a> in the description.
+Add experiment description that contains information how to make this experiment and some science background. Please check other experiment descriptions for the style. Start the description with 1-2 sentence of science background and than add 1-3 sentences of brief experiment step-by-step description.
+</p>
+<p>
+You can use <a href="http://en.wikipedia.org/wiki/Markdown">markdown</a> in the description.
 </p>
 
 <h3>15. Edit: category</h3>
 <p>
-Select one of <a href="https://github.com/MELScience/melscience.github.io/tree/master/categories">the following categories</a> for the experiment and add it to the <b>category</b> field.
+Select one of <a href="https://github.com/MELScience/melscience.github.io/tree/master/categories">the following categories</a> for the experiment and add it to the <b>category</b> field. If you could not find category you need assign "others".
 </p>
 
 <h3>16. Edit: reaction formula</h3>
@@ -191,5 +192,5 @@ Put <a href="http://en.wikipedia.org/wiki/Chemical_equation">reaction formula</a
 
 <h3>17. Edit: reagents</h3>
 <p>
-Check if the needed reagents are already described in <a href="https://github.com/MELScience/melscience.github.io/tree/master/reagents">the list of reagents</a>.  If not <a href="howtoedit_add_reagent.html">create new reagent pages</a> for missed reagents. Add list of all used reagent ids into the <b>reagents</b> section. 
+Check if the needed reagents are already described in <a href="https://github.com/MELScience/melscience.github.io/tree/master/reagents">the list of reagents</a>.  If not <a href="add_reagent.html">create new reagent pages</a> for missed reagents. Add list of all used reagent ids into the <b>reagents</b> section. 
 </p>
