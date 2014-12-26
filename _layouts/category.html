@@ -22,7 +22,7 @@ div.animated-by-hover:hover div.static-image {display: none}
 .square-container:before {
   content: "";
   display: block;
-  padding-top: 100%;  /* initial ratio of 1:1*/
+  padding-top: 56.25%;  /* initial ratio of 16:9*/
 }
 .square-content {
   position:  absolute;
@@ -30,6 +30,13 @@ div.animated-by-hover:hover div.static-image {display: none}
   left: 0;
   bottom: 0;
   right: 0;
+}
+.experiment-description {
+  margin-top: 12px;
+}
+.experiment-title {
+  margin-top: 5px;
+  font-weight: bold;
 }
 </style>
   </head>
@@ -53,19 +60,22 @@ div.animated-by-hover:hover div.static-image {display: none}
 
 {% for e in site.pages %}
 {% if e.type == "experiment" %}
-{% if e.category == page.id %}
+{% for ec in e.category %}
+{% if ec == page.id %}
             <div class="col-4 col-sm-4 col-lg-3">
               <div class="panel panel-default">
-                <div class="animated-by-hover">
-                  <div class="static-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.jpg" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
-                  <div class="animated-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="../experiments/thumbnails/{{ e.id }}.gif" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                <div>
+                  <div class="static-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="{{ e.youtube_video_for_thumbnail | replace: 'http://www.youtube.com/watch?v=', 'http://i.ytimg.com/vi/' | append: '/mqdefault.jpg'}}" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
                 </div>
-                <div class="panel-heading" style="background-color: white; height: 80px;">
-                  <h3 class="panel-title"><a href="../experiments/{{ e.id }}.html">{{ e.experiment_name }}</a></h3>
+                <div class="panel-heading" style="background-color: white; height: 110px;">
+                  <h3 class="panel-title experiment-title"><a href="../experiments/{{ e.id }}.html">{{ e.title_name }}</a></h3>
+                  <h3 class="panel-title experiment-description"><a href="../experiments/{{ e.id }}.html">{{ e.descriptive_name }}</a></h3>
                 </div>
               </div>
             </div><!--/span-->
+
 {% endif %}
+{% endfor %}
 {% endif %}
 {% endfor %}
 

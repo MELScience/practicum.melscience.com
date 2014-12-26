@@ -1,5 +1,5 @@
 ﻿{% include top.html %}
-    <title>{{ page.experiment_name }} - MEL Chemistry</title>
+    <title>{{ page.title_name }} - MEL Chemistry</title>
   </head>
 
   <body>
@@ -7,10 +7,10 @@
 
     <div class="container">
 
-{% assign category_name = page.category %}
+{% assign category_name = page.category | first %}
 {% for c in site.pages %}
   {% if c.type == "category" %}
-    {% if c.id == page.category %}
+    {% if c.id == page.category | first %}
       {% assign category_name = c.category_name %}
     {% endif %}
   {% endif %}
@@ -18,8 +18,8 @@
 
 <ol class="breadcrumb">
   <li><a href="/">Chemistry Experiments</a></li>
-  <li><a href="/categories/{{ page.category }}.html">{{ category_name | capitalize }}</a></li>
-  <li class="active"><span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ page.experiment_name }}</span></li>
+  <li><a href="/categories/{{ page.category | first }}.html">{{ category_name | capitalize }}</a></li>
+  <li class="active"><span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ page.title_name }}</span></li>
   <span class="pull-right">
     <a href="https://github.com/MELScience/melscience.github.io/edit/master/experiments/{{ page.name }}" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-pencil"></span> Edit</a>
     <a href="/edit/update_experiment.html" class="btn btn-default btn-xs">How to Edit</a>
@@ -28,24 +28,15 @@
 
       <div class="row row-offcanvas row-offcanvas-right">
 
-<h1>{{ page.experiment_name }}</h1>
-
-<h2>Description</h2>
-<p>
-{{ page.description | markdownify  }}
-</p>
+<h1>{{ page.title_name }}</h1>
+{{ page.descriptive_name  }}
 
 <h2>Reaction Formula</h2>
+{% for formula in page.reaction_formulas %}
 <p>
-{{ page.reaction }}
+  {{ formula }}
 </p>
-
-{% if page.safety != null %}
-<h2>Safety</h2>
-<p>
-{{ page.safety | markdownify }}
-</p>
-{% endif %}
+{% endfor %}
 
 <h2>Reagents</h2>
 <ol>
@@ -58,17 +49,69 @@
 {% endfor %}
 </ol>
 
+{% if page.safety_description != null %}
+<h2>Safety</h2>
+<p>
+{{ page.safety_description | markdownify }}
+</p>
+{% endif %}
+
+{% if page.step_by_step != null %}
+<h2>Step-by-step</h2>
+<p>
+{{ page.step_by_step | markdownify }}
+</p>
+{% endif %}
+
+
 <h2>Read More</h2>
 <ul>
 {% for link in page.links %}
   <li><a href="{{ link.link }}">{{ link.title }}</a></li>
 {% endfor %}
 </ul>
-
+ 
 <h2>YouTube Videos</h2>
 {% for video in page.youtube_videos %}
 <iframe width="560" height="315" src="//www.youtube.com/embed/{{ video.link | replace:'https://www.youtube.com/watch?v=','' | replace:'http://www.youtube.com/watch?v=','' }}?showinfo=1&modestbranding=1&controls=1&autohide=1" frameborder="0" allowfullscreen></iframe>
 {% endfor %}
+
+<h2>Misc Data</h2>
+<table>
+<tr><td>Class</td><td>{{ page.class }}</td></tr>
+<tr><td>Categories</td><td>
+{% for category in page.category %}
+<p>
+  {{ category }}
+{% endfor %}
+</p>
+</td></tr>
+<tr><td>Weeks</td><td>
+{% for week in page.weeks %}
+<p>
+  {{ week }}
+{% endfor %}
+</p>
+</td></tr>
+<tr><td>scientific_name</td><td>{{ page.scientific_name }}</td></tr>
+<tr><td>safety</td><td>{{ page.safety }}</td></tr>
+<tr><td>coolness</td><td>{{ page.coolness }}</td></tr>
+<tr><td>fire</td><td>{{ page.fire }}</td></tr>
+<tr><td>heating_with_fire</td><td>{{ page.heating_with_fire }}</td></tr>
+<tr><td>explosion</td><td>{{ page.explosion }}</td></tr>
+<tr><td>poisoned_gas</td><td>{{ page.poisoned_gas }}</td></tr>
+<tr><td>organic</td><td>{{ page.organic }}</td></tr>
+<tr><td>electricity</td><td>{{ page.electricity }}</td></tr>
+<tr><td>solution</td><td>{{ page.solution }}</td></tr>
+<tr><td>oxydation_reduction</td><td>{{ page.oxydation_reduction }}</td></tr>
+<tr><td>color_change</td><td>{{ page.color_change }}</td></tr>
+<tr><td>precipitate</td><td>{{ page.precipitate }}</td></tr>
+<tr><td>gassing</td><td>{{ page.gassing }}</td></tr>
+<tr><td>catalyst</td><td>{{ page.catalyst }}</td></tr>
+<tr><td>phases_gas</td><td>{{ page.phases_gas }}</td></tr>
+<tr><td>phases_liquide</td><td>{{ page.phases_liquide }}</td></tr>
+<tr><td>phases_solid</td><td>{{ page.phases_solid }}</td></tr>
+</table>
 
 {{ content }}
 

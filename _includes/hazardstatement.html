@@ -1,0 +1,78 @@
+{% assign hazard_statement_text = "" %}
+{% if hazard_statement_code == "H200" %}{% assign hazard_statement_text = "Unstable explosive" %}{% endif %}
+{% if hazard_statement_code == "H201" %}{% assign hazard_statement_text = "Explosive; mass explosion hazard" %}{% endif %}
+{% if hazard_statement_code == "H202" %}{% assign hazard_statement_text = "Explosive; severe projection hazard" %}{% endif %}
+{% if hazard_statement_code == "H203" %}{% assign hazard_statement_text = "Explosive; fire, blast or projection hazard" %}{% endif %}
+{% if hazard_statement_code == "H204" %}{% assign hazard_statement_text = "Fire or projection hazard" %}{% endif %}
+{% if hazard_statement_code == "H205" %}{% assign hazard_statement_text = "May mass explode in fire" %}{% endif %}
+{% if hazard_statement_code == "H220" %}{% assign hazard_statement_text = "Extremely flammable gas" %}{% endif %}
+{% if hazard_statement_code == "H221" %}{% assign hazard_statement_text = "Flammable gas" %}{% endif %}
+{% if hazard_statement_code == "H222" %}{% assign hazard_statement_text = "Extremely flammable aerosol" %}{% endif %}
+{% if hazard_statement_code == "H223" %}{% assign hazard_statement_text = "Flammable aerosol" %}{% endif %}
+{% if hazard_statement_code == "H224" %}{% assign hazard_statement_text = "Extremely flammable liquid and vapour" %}{% endif %}
+{% if hazard_statement_code == "H225" %}{% assign hazard_statement_text = "Highly flammable liquid and vapour" %}{% endif %}
+{% if hazard_statement_code == "H226" %}{% assign hazard_statement_text = "Flammable liquid and vapour" %}{% endif %}
+{% if hazard_statement_code == "H227" %}{% assign hazard_statement_text = "Combustible liquid" %}{% endif %}
+{% if hazard_statement_code == "H228" %}{% assign hazard_statement_text = "Flammable solid" %}{% endif %}
+{% if hazard_statement_code == "H229" %}{% assign hazard_statement_text = "Pressurized container: may burst if heated" %}{% endif %}
+{% if hazard_statement_code == "H230" %}{% assign hazard_statement_text = "May react explosively even in the absence of air" %}{% endif %}
+{% if hazard_statement_code == "H231" %}{% assign hazard_statement_text = "May react explosively even in the absence of air at elevated pressure and/or temperature" %}{% endif %}
+{% if hazard_statement_code == "H240" %}{% assign hazard_statement_text = "Heating may cause an explosion" %}{% endif %}
+{% if hazard_statement_code == "H241" %}{% assign hazard_statement_text = "Heating may cause a fire or explosion" %}{% endif %}
+{% if hazard_statement_code == "H242" %}{% assign hazard_statement_text = "Heating may cause a fire" %}{% endif %}
+{% if hazard_statement_code == "H250" %}{% assign hazard_statement_text = "Catches fire spontaneously if exposed to air" %}{% endif %}
+{% if hazard_statement_code == "H251" %}{% assign hazard_statement_text = "Self-heating; may catch fire" %}{% endif %}
+{% if hazard_statement_code == "H252" %}{% assign hazard_statement_text = "Self-heating in large quantities; may catch fire" %}{% endif %}
+{% if hazard_statement_code == "H260" %}{% assign hazard_statement_text = "In contact with water releases flammable gases which may ignite spontaneously" %}{% endif %}
+{% if hazard_statement_code == "H261" %}{% assign hazard_statement_text = "In contact with water releases flammable gas" %}{% endif %}
+{% if hazard_statement_code == "H270" %}{% assign hazard_statement_text = "May cause or intensify fire; oxidizer" %}{% endif %}
+{% if hazard_statement_code == "H271" %}{% assign hazard_statement_text = "May cause fire or explosion; strong oxidizer" %}{% endif %}
+{% if hazard_statement_code == "H272" %}{% assign hazard_statement_text = "May intensify fire; oxidizer" %}{% endif %}
+{% if hazard_statement_code == "H280" %}{% assign hazard_statement_text = "Contains gas under pressure; may explode if heated" %}{% endif %}
+{% if hazard_statement_code == "H281" %}{% assign hazard_statement_text = "Contains refrigerated gas; may cause cryogenic burns or injury" %}{% endif %}
+{% if hazard_statement_code == "H290" %}{% assign hazard_statement_text = "May be corrosive to metals" %}{% endif %}
+{% if hazard_statement_code == "H300" %}{% assign hazard_statement_text = "Fatal if swallowed" %}{% endif %}
+{% if hazard_statement_code == "H301" %}{% assign hazard_statement_text = "Toxic if swallowed" %}{% endif %}
+{% if hazard_statement_code == "H302" %}{% assign hazard_statement_text = "Harmful if swallowed" %}{% endif %}
+{% if hazard_statement_code == "H303" %}{% assign hazard_statement_text = "May be harmful if swallowed" %}{% endif %}
+{% if hazard_statement_code == "H304" %}{% assign hazard_statement_text = "May be fatal if swallowed and enters airways" %}{% endif %}
+{% if hazard_statement_code == "H305" %}{% assign hazard_statement_text = "May be harmful if swallowed and enters airways" %}{% endif %}
+{% if hazard_statement_code == "H310" %}{% assign hazard_statement_text = "Fatal in contact with skin" %}{% endif %}
+{% if hazard_statement_code == "H311" %}{% assign hazard_statement_text = "Toxic in contact with skin" %}{% endif %}
+{% if hazard_statement_code == "H312" %}{% assign hazard_statement_text = "Harmful in contact with skin" %}{% endif %}
+{% if hazard_statement_code == "H313" %}{% assign hazard_statement_text = "May be harmful in contact with skin" %}{% endif %}
+{% if hazard_statement_code == "H314" %}{% assign hazard_statement_text = "Causes severe skin burns and eye damage" %}{% endif %}
+{% if hazard_statement_code == "H315" %}{% assign hazard_statement_text = "Causes skin irritation" %}{% endif %}
+{% if hazard_statement_code == "H316" %}{% assign hazard_statement_text = "Causes mild skin irritation" %}{% endif %}
+{% if hazard_statement_code == "H317" %}{% assign hazard_statement_text = "May cause an allergic skin reaction" %}{% endif %}
+{% if hazard_statement_code == "H318" %}{% assign hazard_statement_text = "Causes serious eye damage" %}{% endif %}
+{% if hazard_statement_code == "H319" %}{% assign hazard_statement_text = "Causes serious eye irritation" %}{% endif %}
+{% if hazard_statement_code == "H320" %}{% assign hazard_statement_text = "Causes eye irritation" %}{% endif %}
+{% if hazard_statement_code == "H330" %}{% assign hazard_statement_text = "Fatal if inhaled" %}{% endif %}
+{% if hazard_statement_code == "H331" %}{% assign hazard_statement_text = "Toxic if inhaled" %}{% endif %}
+{% if hazard_statement_code == "H332" %}{% assign hazard_statement_text = "Harmful if inhaled" %}{% endif %}
+{% if hazard_statement_code == "H333" %}{% assign hazard_statement_text = "May be harmful if inhaled" %}{% endif %}
+{% if hazard_statement_code == "H334" %}{% assign hazard_statement_text = "May cause allergy or asthma symptoms or breathing difficulties if inhaled" %}{% endif %}
+{% if hazard_statement_code == "H335" %}{% assign hazard_statement_text = "May cause respiratory irritation" %}{% endif %}
+{% if hazard_statement_code == "H336" %}{% assign hazard_statement_text = "May cause drowsiness or dizziness" %}{% endif %}
+{% if hazard_statement_code == "H340" %}{% assign hazard_statement_text = "May cause genetic defects" %}{% endif %}
+{% if hazard_statement_code == "H341" %}{% assign hazard_statement_text = "Suspected of causing genetic defects" %}{% endif %}
+{% if hazard_statement_code == "H350" %}{% assign hazard_statement_text = "May cause cancer" %}{% endif %}
+{% if hazard_statement_code == "H351" %}{% assign hazard_statement_text = "Suspected of causing cancer" %}{% endif %}
+{% if hazard_statement_code == "H360" %}{% assign hazard_statement_text = "May damage fertility or the unborn child" %}{% endif %}
+{% if hazard_statement_code == "H361" %}{% assign hazard_statement_text = "Suspected of damaging fertility or the unborn child" %}{% endif %}
+{% if hazard_statement_code == "H361d" %}{% assign hazard_statement_text = "Suspected of damaging the unborn child" %}{% endif %}
+{% if hazard_statement_code == "H362" %}{% assign hazard_statement_text = "May cause harm to breast-fed children" %}{% endif %}
+{% if hazard_statement_code == "H370" %}{% assign hazard_statement_text = "Causes damage to organs" %}{% endif %}
+{% if hazard_statement_code == "H371" %}{% assign hazard_statement_text = "May cause damage to organs" %}{% endif %}
+{% if hazard_statement_code == "H372" %}{% assign hazard_statement_text = "Causes damage to organs through prolonged or repeated exposure" %}{% endif %}
+{% if hazard_statement_code == "H373" %}{% assign hazard_statement_text = "May cause damage to organs through prolonged or repeated exposure" %}{% endif %}
+{% if hazard_statement_code == "H400" %}{% assign hazard_statement_text = "Very toxic to aquatic life" %}{% endif %}
+{% if hazard_statement_code == "H401" %}{% assign hazard_statement_text = "Toxic to aquatic life" %}{% endif %}
+{% if hazard_statement_code == "H402" %}{% assign hazard_statement_text = "Harmful to aquatic life" %}{% endif %}
+{% if hazard_statement_code == "H410" %}{% assign hazard_statement_text = "Very toxic to aquatic life with long lasting effects" %}{% endif %}
+{% if hazard_statement_code == "H411" %}{% assign hazard_statement_text = "Toxic to aquatic life with long lasting effects" %}{% endif %}
+{% if hazard_statement_code == "H412" %}{% assign hazard_statement_text = "Harmful to aquatic life with long lasting effects" %}{% endif %}
+{% if hazard_statement_code == "H413" %}{% assign hazard_statement_text = "May cause long lasting harmful effects to aquatic life" %}{% endif %}
+{% if hazard_statement_code == "H420" %}{% assign hazard_statement_text = "Harms public health and the environment by destroying ozone in the upper atmosphere" %}{% endif %}
+{{ hazard_statement_text }}

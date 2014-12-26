@@ -31,24 +31,29 @@
   {% endfor %}
 </p>
 
+<h2>Hazard Informmation</h2>
+<h3>{{ page.ghs_signal_word | upcase }}</h3>
 <p>
-{% assign reagent_page = page %}
-{% include nfpa_sign.html %}
+{% for pictogram in page.ghs_hazard_pictograms %}
+<img src="/images/ghspictorgams/{{ pictogram }}.png" style="width: 100px; height: 100px">
+{% endfor %}
 </p>
 
-<h2>Risk Phrases</h2>
-<ul>
-{% for rphrase_code in page.risk_phrases %}
-<li>{{ rphrase_code }}: {% include rphrase.html %}</li>
+<h3>Hazard statements</h3>
+{% if page.ghs_hazard_statement | size %}{% else %}
+No hazard statements
+{% endif %}
+{% for hazard_statement_code in page.ghs_hazard_statement %}
+<li>{{ hazard_statement_code }}: {% include hazardstatement.html %}</li>
 {% endfor %}
-</ul>
 
-<h2>Safity Phrases</h2>
-<ul>
-{% for sphrase_code in page.safity_phrases %}
-<li>{{ sphrase_code }}: {% include sphrase.html %}</li>
+<h3>Precautionary statements</h3>
+{% if page.ghs_precautionary_statements | size %}{% else %}
+No precautionary statements
+{% endif %}
+{% for precautionary_statement_code in page.ghs_precautionary_statements %}
+<li>{{ precautionary_statement_code }}: {% include precautionarystatement.html %}</li>
 {% endfor %}
-</ul>
 
 <h2>Download MSDS</h2>
 <ul>

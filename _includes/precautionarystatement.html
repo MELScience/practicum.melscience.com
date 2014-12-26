@@ -1,0 +1,142 @@
+{% assign precautionary_statement_text = "" %}
+{% if precautionary_statement_code == "P101" %}{% assign precautionary_statement_text = "If medical advice is needed, have product container or label at hand." %}{% endif %}
+{% if precautionary_statement_code == "P102" %}{% assign precautionary_statement_text = "Keep out of reach of children." %}{% endif %}
+{% if precautionary_statement_code == "P103" %}{% assign precautionary_statement_text = "Read label before use." %}{% endif %}
+{% if precautionary_statement_code == "P201" %}{% assign precautionary_statement_text = "Obtain special instructions before use." %}{% endif %}
+{% if precautionary_statement_code == "P202" %}{% assign precautionary_statement_text = "Do not handle until all safety precautions have been read and understood." %}{% endif %}
+{% if precautionary_statement_code == "P210" %}{% assign precautionary_statement_text = "Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P211" %}{% assign precautionary_statement_text = "Do not spray on an open flame or other ignition source." %}{% endif %}
+{% if precautionary_statement_code == "P220" %}{% assign precautionary_statement_text = "Keep/Store away from clothing/…/combustible materials. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P221" %}{% assign precautionary_statement_text = "Take any precaution to avoid mixing with combustibles." %}{% endif %}
+{% if precautionary_statement_code == "P222" %}{% assign precautionary_statement_text = "Do not allow contact with air." %}{% endif %}
+{% if precautionary_statement_code == "P223" %}{% assign precautionary_statement_text = "Do not allow contact with water. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P230" %}{% assign precautionary_statement_text = "Keep wetted with …" %}{% endif %}
+{% if precautionary_statement_code == "P231" %}{% assign precautionary_statement_text = "Handle under inert gas." %}{% endif %}
+{% if precautionary_statement_code == "P232" %}{% assign precautionary_statement_text = "Protect from moisture." %}{% endif %}
+{% if precautionary_statement_code == "P233" %}{% assign precautionary_statement_text = "Keep container tightly closed." %}{% endif %}
+{% if precautionary_statement_code == "P234" %}{% assign precautionary_statement_text = "Keep only in original container." %}{% endif %}
+{% if precautionary_statement_code == "P235" %}{% assign precautionary_statement_text = "Keep cool.." %}{% endif %}
+{% if precautionary_statement_code == "P240" %}{% assign precautionary_statement_text = "Ground/bond container and receiving equipment." %}{% endif %}
+{% if precautionary_statement_code == "P241" %}{% assign precautionary_statement_text = "Use explosion-proof electrical/ventilating/light/…/equipment." %}{% endif %}
+{% if precautionary_statement_code == "P242" %}{% assign precautionary_statement_text = "Use only non-sparking tools." %}{% endif %}
+{% if precautionary_statement_code == "P243" %}{% assign precautionary_statement_text = "Take precautionary measures against static discharge." %}{% endif %}
+{% if precautionary_statement_code == "P244" %}{% assign precautionary_statement_text = "Keep valves and fittings free from oil and grease. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P250" %}{% assign precautionary_statement_text = "Do not subject to grinding/shock/…/friction." %}{% endif %}
+{% if precautionary_statement_code == "P251" %}{% assign precautionary_statement_text = "Do not pierce or burn, even after use. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P260" %}{% assign precautionary_statement_text = "Do not breathe dust/fume/gas/mist/vapours/spray." %}{% endif %}
+{% if precautionary_statement_code == "P261" %}{% assign precautionary_statement_text = "Avoid breathing dust/fume/ gas/mist/vapours/spray. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P262" %}{% assign precautionary_statement_text = "Do not get in eyes, on skin, or on clothing." %}{% endif %}
+{% if precautionary_statement_code == "P263" %}{% assign precautionary_statement_text = "Avoid contact during pregnancy/while nursing." %}{% endif %}
+{% if precautionary_statement_code == "P264" %}{% assign precautionary_statement_text = "Wash … thoroughly after handling." %}{% endif %}
+{% if precautionary_statement_code == "P270" %}{% assign precautionary_statement_text = "Do not eat, drink or smoke when using this product." %}{% endif %}
+{% if precautionary_statement_code == "P271" %}{% assign precautionary_statement_text = "Use only outdoors or in a well-ventilated area." %}{% endif %}
+{% if precautionary_statement_code == "P272" %}{% assign precautionary_statement_text = "Contaminated work clothing should not be allowed out of the workplace." %}{% endif %}
+{% if precautionary_statement_code == "P273" %}{% assign precautionary_statement_text = "Avoid release to the environment." %}{% endif %}
+{% if precautionary_statement_code == "P280" %}{% assign precautionary_statement_text = "Wear protective gloves/protective clothing/eye protection/face protection. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P281" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P282" %}{% assign precautionary_statement_text = "Wear cold insulating gloves/face shield/eye protection." %}{% endif %}
+{% if precautionary_statement_code == "P283" %}{% assign precautionary_statement_text = "Wear fire/flame resistant/retardant clothing." %}{% endif %}
+{% if precautionary_statement_code == "P284" %}{% assign precautionary_statement_text = "[In case of inadequate ventilation] wear respiratory protection. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P285" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P231+232" %}{% assign precautionary_statement_text = "Handle under inert gas. Protect from moisture" %}{% endif %}
+{% if precautionary_statement_code == "P235+410" %}{% assign precautionary_statement_text = "Keep cool. Protect from sunlight" %}{% endif %}
+{% if precautionary_statement_code == "P301" %}{% assign precautionary_statement_text = "IF SWALLOWED:" %}{% endif %}
+{% if precautionary_statement_code == "P302" %}{% assign precautionary_statement_text = "IF ON SKIN:" %}{% endif %}
+{% if precautionary_statement_code == "P303" %}{% assign precautionary_statement_text = "IF ON SKIN (or hair):" %}{% endif %}
+{% if precautionary_statement_code == "P304" %}{% assign precautionary_statement_text = "IF INHALED:" %}{% endif %}
+{% if precautionary_statement_code == "P305" %}{% assign precautionary_statement_text = "IF IN EYES:" %}{% endif %}
+{% if precautionary_statement_code == "P306" %}{% assign precautionary_statement_text = "IF ON CLOTHING:" %}{% endif %}
+{% if precautionary_statement_code == "P307" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P308" %}{% assign precautionary_statement_text = "IF exposed or concerned:" %}{% endif %}
+{% if precautionary_statement_code == "P309" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P310" %}{% assign precautionary_statement_text = "Immediately call a POISON CENTER/doctor/… [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P311" %}{% assign precautionary_statement_text = "Call a POISON CENTER/ doctor/… [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P312" %}{% assign precautionary_statement_text = "Call a POISON CENTER/ doctor/…/if you feel unwell. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P313" %}{% assign precautionary_statement_text = "Get medical advice/attention." %}{% endif %}
+{% if precautionary_statement_code == "P314" %}{% assign precautionary_statement_text = "Get Medical advice/attention if you feel unwell." %}{% endif %}
+{% if precautionary_statement_code == "P315" %}{% assign precautionary_statement_text = "Get immediate medical advice/attention." %}{% endif %}
+{% if precautionary_statement_code == "P320" %}{% assign precautionary_statement_text = "Specific treatment is urgent (see … on this label)." %}{% endif %}
+{% if precautionary_statement_code == "P321" %}{% assign precautionary_statement_text = "Specific treatment (see … on this label)." %}{% endif %}
+{% if precautionary_statement_code == "P322" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P330" %}{% assign precautionary_statement_text = "Rinse mouth." %}{% endif %}
+{% if precautionary_statement_code == "P331" %}{% assign precautionary_statement_text = "Do NOT induce vomiting." %}{% endif %}
+{% if precautionary_statement_code == "P332" %}{% assign precautionary_statement_text = "If skin irritation occurs:" %}{% endif %}
+{% if precautionary_statement_code == "P333" %}{% assign precautionary_statement_text = "If skin irritation or a rash occurs:" %}{% endif %}
+{% if precautionary_statement_code == "P334" %}{% assign precautionary_statement_text = "Immerse in cool water/wrap in wet bandages." %}{% endif %}
+{% if precautionary_statement_code == "P335" %}{% assign precautionary_statement_text = "Brush off loose particles from skin." %}{% endif %}
+{% if precautionary_statement_code == "P336" %}{% assign precautionary_statement_text = "Thaw frosted parts with lukewarm water. Do not rub affected areas." %}{% endif %}
+{% if precautionary_statement_code == "P337" %}{% assign precautionary_statement_text = "If eye irritation persists:" %}{% endif %}
+{% if precautionary_statement_code == "P338" %}{% assign precautionary_statement_text = "Remove contact lenses if present and easy to do. continue rinsing." %}{% endif %}
+{% if precautionary_statement_code == "P340" %}{% assign precautionary_statement_text = "Remove person to fresh air and keep comfortable for breathing." %}{% endif %}
+{% if precautionary_statement_code == "P341" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P342" %}{% assign precautionary_statement_text = "If experiencing respiratory symptoms:" %}{% endif %}
+{% if precautionary_statement_code == "P350" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P351" %}{% assign precautionary_statement_text = "Rinse cautiously with water for several minutes." %}{% endif %}
+{% if precautionary_statement_code == "P352" %}{% assign precautionary_statement_text = "Wash with plenty of water/… [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P353" %}{% assign precautionary_statement_text = "Rinse skin with water/shower." %}{% endif %}
+{% if precautionary_statement_code == "P360" %}{% assign precautionary_statement_text = "Rinse immediately contaminated clothing and skin with plenty of water before removing clothes." %}{% endif %}
+{% if precautionary_statement_code == "P361" %}{% assign precautionary_statement_text = "Take off immediately all contaminated clothing. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P362" %}{% assign precautionary_statement_text = "Take off contaminated clothing. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P363" %}{% assign precautionary_statement_text = "Wash contaminated clothing before reuse. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P364" %}{% assign precautionary_statement_text = "And wash it before reuse. [Added by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P370" %}{% assign precautionary_statement_text = "In case of fire:" %}{% endif %}
+{% if precautionary_statement_code == "P371" %}{% assign precautionary_statement_text = "In case of major fire and large quantities:" %}{% endif %}
+{% if precautionary_statement_code == "P372" %}{% assign precautionary_statement_text = "Explosion risk in case of fire." %}{% endif %}
+{% if precautionary_statement_code == "P373" %}{% assign precautionary_statement_text = "DO NOT fight fire when fire reaches explosives." %}{% endif %}
+{% if precautionary_statement_code == "P374" %}{% assign precautionary_statement_text = "Fight fire with normal precautions from a reasonable distance." %}{% endif %}
+{% if precautionary_statement_code == "P375" %}{% assign precautionary_statement_text = "Fight fire remotely due to the risk of explosion." %}{% endif %}
+{% if precautionary_statement_code == "P376" %}{% assign precautionary_statement_text = "Stop leak if safe to do so." %}{% endif %}
+{% if precautionary_statement_code == "P377" %}{% assign precautionary_statement_text = "Leaking gas fire – do not extinguish unless leak can be stopped safely." %}{% endif %}
+{% if precautionary_statement_code == "P378" %}{% assign precautionary_statement_text = "Use … to extinguish." %}{% endif %}
+{% if precautionary_statement_code == "P380" %}{% assign precautionary_statement_text = "Evacuate area." %}{% endif %}
+{% if precautionary_statement_code == "P381" %}{% assign precautionary_statement_text = "Eliminate all ignition sources if safe to do so." %}{% endif %}
+{% if precautionary_statement_code == "P391" %}{% assign precautionary_statement_text = "Collect spillage." %}{% endif %}
+{% if precautionary_statement_code == "P301+310" %}{% assign precautionary_statement_text = "IF SWALLOWED: Immediately call a POISON CENTER/doctor/… [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P301+312" %}{% assign precautionary_statement_text = "IF SWALLOWED: Call a POISON CENTER/doctor/…/if you feel unwell. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P301+330+331" %}{% assign precautionary_statement_text = "IF SWALLOWED: Rinse mouth. Do NOT induce vomiting." %}{% endif %}
+{% if precautionary_statement_code == "P302+334" %}{% assign precautionary_statement_text = "IF ON SKIN: Immerse in cool water/wrap in wet bandages." %}{% endif %}
+{% if precautionary_statement_code == "P302+350" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P302+352" %}{% assign precautionary_statement_text = "IF ON SKIN: Wash with plenty of water/… [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P303+361+353" %}{% assign precautionary_statement_text = "IF ON SKIN (or hair): Take off immediately all contaminated clothing. Rinse skin with water/ shower. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P304+312" %}{% assign precautionary_statement_text = "IF INHALED: Call a POISON CENTER or doctor/physician if you feel unwell." %}{% endif %}
+{% if precautionary_statement_code == "P304+340" %}{% assign precautionary_statement_text = "IF INHALED: IF INHALED: Remove person to fresh air and keep comfortable for breathing. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P304+341" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P305+351+338" %}{% assign precautionary_statement_text = "IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses if present and easy to do – continue rinsing." %}{% endif %}
+{% if precautionary_statement_code == "P306+360" %}{% assign precautionary_statement_text = "IF ON CLOTHING: Rinse immediately contaminated clothing and skin with plenty of water before removing clothes." %}{% endif %}
+{% if precautionary_statement_code == "P307+311" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P307+311" %}{% assign precautionary_statement_text = "IF exposed: Call a POISON CENTER or doctor/physician." %}{% endif %}
+{% if precautionary_statement_code == "P308+311" %}{% assign precautionary_statement_text = "IF exposed or concerned: Call a POISON CENTER/ doctor/… [Added by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P309+311" %}{% assign precautionary_statement_text = "[Deleted by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P332+313" %}{% assign precautionary_statement_text = "If skin irritation occurs: Get medical advice/attention." %}{% endif %}
+{% if precautionary_statement_code == "P333+313" %}{% assign precautionary_statement_text = "If skin irritation or a rash occurs: Get medical advice/attention." %}{% endif %}
+{% if precautionary_statement_code == "P335+334" %}{% assign precautionary_statement_text = "Brush off loose particles from skin. Immerse in cool water/wrap in wet bandages." %}{% endif %}
+{% if precautionary_statement_code == "P337+313" %}{% assign precautionary_statement_text = "If eye irritation persists get medical advice/attention." %}{% endif %}
+{% if precautionary_statement_code == "P342+311" %}{% assign precautionary_statement_text = "If experiencing respiratory symptoms: Call a POISON CENTER/doctor/… [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P361+364" %}{% assign precautionary_statement_text = "Take off immediately all contaminated clothing and wash it before reuse. [Added by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P362+364" %}{% assign precautionary_statement_text = "Take off contaminated clothing and wash it before reuse. [Added by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P370+376" %}{% assign precautionary_statement_text = "In case of fire: Stop leak if safe to do so." %}{% endif %}
+{% if precautionary_statement_code == "P370+378" %}{% assign precautionary_statement_text = "In case of fire: Use … to extinguish. [As modified by IV ATP]" %}{% endif %}
+{% if precautionary_statement_code == "P370+380" %}{% assign precautionary_statement_text = "In case of fire: Evacuate area." %}{% endif %}
+{% if precautionary_statement_code == "P370+380+375" %}{% assign precautionary_statement_text = "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion." %}{% endif %}
+{% if precautionary_statement_code == "P371+380+375" %}{% assign precautionary_statement_text = "In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion." %}{% endif %}
+{% if precautionary_statement_code == "P401" %}{% assign precautionary_statement_text = "Store …" %}{% endif %}
+{% if precautionary_statement_code == "P402" %}{% assign precautionary_statement_text = "Store in a dry place." %}{% endif %}
+{% if precautionary_statement_code == "P403" %}{% assign precautionary_statement_text = "Store in a well ventilated place." %}{% endif %}
+{% if precautionary_statement_code == "P404" %}{% assign precautionary_statement_text = "Store in a closed container." %}{% endif %}
+{% if precautionary_statement_code == "P405" %}{% assign precautionary_statement_text = "Store locked up." %}{% endif %}
+{% if precautionary_statement_code == "P406" %}{% assign precautionary_statement_text = "Store in a corrosive resistant/… container with a resistant inner liner." %}{% endif %}
+{% if precautionary_statement_code == "P407" %}{% assign precautionary_statement_text = "Maintain air gap between stacks/pallets." %}{% endif %}
+{% if precautionary_statement_code == "P410" %}{% assign precautionary_statement_text = "Protect from sunlight." %}{% endif %}
+{% if precautionary_statement_code == "P411" %}{% assign precautionary_statement_text = "Store at temperatures not exceeding … °C/… °F." %}{% endif %}
+{% if precautionary_statement_code == "P412" %}{% assign precautionary_statement_text = "Do not expose to temperatures exceeding 50 °C/122 °F." %}{% endif %}
+{% if precautionary_statement_code == "P413" %}{% assign precautionary_statement_text = "Store bulk masses greater than … kg/… lbs at temperatures not exceeding … °C/… °F." %}{% endif %}
+{% if precautionary_statement_code == "P420" %}{% assign precautionary_statement_text = "Store away from other materials." %}{% endif %}
+{% if precautionary_statement_code == "P422" %}{% assign precautionary_statement_text = "Store contents under …" %}{% endif %}
+{% if precautionary_statement_code == "P402+404" %}{% assign precautionary_statement_text = "Store in a dry place. Store in a closed container." %}{% endif %}
+{% if precautionary_statement_code == "P403+233" %}{% assign precautionary_statement_text = "Store in a well ventilated place. Keep container tightly closed." %}{% endif %}
+{% if precautionary_statement_code == "P403+235" %}{% assign precautionary_statement_text = "Store in a well ventilated place. Keep cool." %}{% endif %}
+{% if precautionary_statement_code == "P410+403" %}{% assign precautionary_statement_text = "Protect from sunlight. Store in a well-ventilated place." %}{% endif %}
+{% if precautionary_statement_code == "P410+412" %}{% assign precautionary_statement_text = "Protect from sunlight. Do not expose to temperatures exceeding 50 °C/122 °F." %}{% endif %}
+{% if precautionary_statement_code == "P411+235" %}{% assign precautionary_statement_text = "Store at temperatures not exceeding … °C/… °F. Keep cool." %}{% endif %}
+{% if precautionary_statement_code == "P501" %}{% assign precautionary_statement_text = "Dispose of contents/container to … [… in accordance with local/regional/national/international regulation (to be specified)]." %}{% endif %}
+{{ precautionary_statement_text }}
