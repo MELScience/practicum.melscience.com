@@ -25,13 +25,16 @@
 <p>
   <a href="{{ page.wikipedia }}">Wikipedia article about {{ page.reagent_name }}</a><br>
   Substance: {{ page.substance_name }}<br>
+  {% if page.other_names | size > 0%}
   Also known as: 
   {% for another_name in page.other_names %}
     {{ another_name }}, 
   {% endfor %}
+  {% endif %}
 </p>
 
 <h2>Hazard Informmation</h2>
+{% if (page.ghs_hazard_pictograms | size) | append (page.ghs_hazard_statement | size) | append (if page.ghs_precautionary_statements | size) == "000" %}
 <h3>{{ page.ghs_signal_word | upcase }}</h3>
 <p>
 {% for pictogram in page.ghs_hazard_pictograms %}
@@ -55,6 +58,10 @@ No precautionary statements
 <li>{{ precautionary_statement_code }}: {% include precautionarystatement.html %}</li>
 {% endfor %}
 
+{% else %}
+This reagent is considered nonhazardous according to GHS classifications. Treat all reagents with caution.
+{% endif %}
+
 <h2>Download MSDS</h2>
 <ul>
 {% for msds_link in page.msds %}
@@ -62,6 +69,28 @@ No precautionary statements
 {% endfor %}
 
 </ul>
+
+<h2>Experiments</h2>
+{% for e in site.pages %}
+{% if e.type == "experiment" %}
+{% for er in e.reagents %}
+{% if er == page.id %}
+            <div class="col-4 col-sm-4 col-lg-3">
+              <div class="panel panel-default">
+                <div>
+                  <div class="static-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="{{ e.youtube_video_for_thumbnail | replace: 'http://www.youtube.com/watch?v=', 'http://i.ytimg.com/vi/' | append: '/mqdefault.jpg'}}" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                </div>
+                <div class="panel-heading" style="background-color: white; height: 110px;">
+                  <h3 class="panel-title experiment-title"><a href="../experiments/{{ e.id }}.html">{{ e.title_name }}</a></h3>
+                  <h3 class="panel-title experiment-description"><a href="../experiments/{{ e.id }}.html">{{ e.descriptive_name }}</a></h3>
+                </div>
+              </div>
+            </div><!--/span-->
+
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
 
 {{ content }}
 
