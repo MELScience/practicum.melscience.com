@@ -1,5 +1,5 @@
 ﻿{% include top.html %}
-    <title>{{ page.reagent_name | capitalize }} ({{ page.formula }}) - Reagents - MEL Chemistry</title>
+    <title>{{ page.reagent_name | capitalize }} ({{ page.formula | replace: '<sub>', '' | replace: '</sub>', '' }}) - Reagents - MEL Chemistry</title>
   </head>
 
   <body>
@@ -61,6 +61,17 @@ No precautionary statements
 {% else %}
 This reagent is considered nonhazardous according to GHS classifications. Treat all reagents with caution.
 {% endif %}
+
+<h2>Similar reagents</h2>
+{% for reagent_page in site.pages %}
+{% if reagent_page.type == "reagent" %}
+{% if reagent_page.substance_name == page.substance_name %}
+{% if reagent_page.id != page.id %}
+<li><a href="../reagents/{{ reagent_page.id }}.html">{{ reagent_page.reagent_name | capitalize}} ({{ reagent_page.formula }})</a></li>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
 
 <h2>Download MSDS</h2>
 <ul>
