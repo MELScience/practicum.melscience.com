@@ -33,7 +33,7 @@
   {% endif %}
 </p>
 
-<h2>Hazard Informmation</h2>
+<h2>Hazard Information</h2>
 {% if (page.ghs_hazard_pictograms | size) | append (page.ghs_hazard_statement | size) | append (if page.ghs_precautionary_statements | size) == "000" %}
 <h3>{{ page.ghs_signal_word | upcase }}</h3>
 <p>
@@ -62,6 +62,21 @@ No precautionary statements
 This reagent is considered nonhazardous according to GHS classifications. Treat all reagents with caution.
 {% endif %}
 
+{% assign similar_reagents_str = "" %}
+{% for reagent_page in site.pages %}
+{% if reagent_page.type == "reagent" %}
+{% if reagent_page.substance_name == page.substance_name %}
+{% if reagent_page.id != page.id %}
+{% assign similar_reagents_str = similar_reagents_str | append: ',' | append: reagent_page.id %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% assign similar_reagents_str = similar_reagents_str | remove_first: ',' %}
+{% assign similar_reagents = similar_reagents_str | split: ',' %}
+{% assign similar_reagents_size = similar_reagents | size %}
+
+{% if similar_reagents_size > 0 %}
 <h2>Similar reagents</h2>
 {% for reagent_page in site.pages %}
 {% if reagent_page.type == "reagent" %}
@@ -72,6 +87,7 @@ This reagent is considered nonhazardous according to GHS classifications. Treat 
 {% endif %}
 {% endif %}
 {% endfor %}
+{% endif %}
 
 <h2>Download MSDS</h2>
 <ul>
@@ -102,6 +118,46 @@ This reagent is considered nonhazardous according to GHS classifications. Treat 
 {% endfor %}
 {% endif %}
 {% endfor %}
+
+{% assign any_experiment_with_similar_reagents = 0 %}
+{% for e in site.pages %}
+{% if e.type == "experiment" %}
+{% for similar_reagent in similar_reagents %}
+{% for er in e.reagents %}
+{% if er == similar_reagent %}
+{% assign any_experiment_with_similar_reagents = 1 %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% if any_experiment_with_similar_reagents == 1 %}
+<br style="clear: both"/>
+<h2>Experiments with similar reagents</h2>
+{% for e in site.pages %}
+{% if e.type == "experiment" %}
+{% for similar_reagent in similar_reagents %}
+{% for er in e.reagents %}
+{% if er == similar_reagent %}
+            <div class="col-4 col-sm-4 col-lg-3">
+              <div class="panel panel-default">
+                <div>
+                  <div class="static-image square-container"><a class="square-content" href="../experiments/{{ e.id }}.html"><img src="{{ e.youtube_video_for_thumbnail | replace: 'http://www.youtube.com/watch?v=', 'http://i.ytimg.com/vi/' | append: '/mqdefault.jpg'}}" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                </div>
+                <div class="panel-heading" style="background-color: white; height: 110px;">
+                  <h3 class="panel-title experiment-title"><a href="../experiments/{{ e.id }}.html">{{ e.title_name }}</a></h3>
+                  <h3 class="panel-title experiment-description"><a href="../experiments/{{ e.id }}.html">{{ e.descriptive_name }}</a></h3>
+                </div>
+              </div>
+            </div><!--/span-->
+
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
 
 {{ content }}
 
