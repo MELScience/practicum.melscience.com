@@ -43,20 +43,26 @@
 </p>
 
 <h3>Hazard statements</h3>
-{% if page.ghs_hazard_statement | size %}{% else %}
-No hazard statements
-{% endif %}
+{% if page.ghs_hazard_statement | size %}
+<ul>
 {% for hazard_statement_code in page.ghs_hazard_statement %}
 <li>{{ hazard_statement_code }}: {% include hazardstatement.html %}</li>
 {% endfor %}
+</ul>
+{% else %}
+No hazard statements
+{% endif %}
 
 <h3>Precautionary statements</h3>
-{% if page.ghs_precautionary_statements | size %}{% else %}
-No precautionary statements
-{% endif %}
+{% if page.ghs_precautionary_statements | size %}
+<ul>
 {% for precautionary_statement_code in page.ghs_precautionary_statements %}
 <li>{{ precautionary_statement_code }}: {% include precautionarystatement.html %}</li>
 {% endfor %}
+</ul>
+{% else %}
+No precautionary statements
+{% endif %}
 
 {% else %}
 This reagent is considered nonhazardous according to GHS classifications. Treat all reagents with caution.
@@ -78,6 +84,7 @@ This reagent is considered nonhazardous according to GHS classifications. Treat 
 
 {% if similar_reagents_size > 0 %}
 <h2>Similar reagents</h2>
+<ul>
 {% for reagent_page in site.pages %}
 {% if reagent_page.type == "reagent" %}
 {% if reagent_page.substance_name == page.substance_name %}
@@ -87,6 +94,7 @@ This reagent is considered nonhazardous according to GHS classifications. Treat 
 {% endif %}
 {% endif %}
 {% endfor %}
+</ul>
 {% endif %}
 
 <h2>Download MSDS</h2>

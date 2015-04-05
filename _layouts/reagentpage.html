@@ -1,0 +1,37 @@
+{% include top.html %}
+    <title>Reagents - MEL Chemistry</title>
+  </head>
+
+  <body>
+{% include top-navigation.html %}
+
+    <div class="container">
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Reagents</li>
+  <span class="pull-right">
+    <a href="/edit/update_reagent.html" class="btn btn-default btn-xs">Add Reagent</a>
+  </span>
+</ol>
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+
+<h1>Reagents</h1>
+
+<ul>
+{% for reagent_page in site.pages %}
+{% if reagent_page.type == "reagent" %}
+<li><a href="../reagents/{{ reagent_page.id }}.html">{{ reagent_page.reagent_name | capitalize}} ({{ reagent_page.formula }})</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+
+
+{{ content }}
+
+
+      </div><!--/row-->
+
+{% include bottom.html %}
