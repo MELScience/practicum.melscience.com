@@ -63,6 +63,12 @@
 </p>
 {% endif %}
 
+{% if page.science_background != null %}
+<h2>Scientific Background</h2>
+<p>
+{{ page.science_background | markdownify }}
+</p>
+{% endif %}
 
 <h2>Read More</h2>
 <ul>
