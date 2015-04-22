@@ -1,0 +1,69 @@
+---
+layout: mainpage
+---
+<style>
+.img-flat-bottom {
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+div.animated-by-hover div.animated-image {display: none}
+div.animated-by-hover:hover div.animated-image {display: block}
+div.animated-by-hover:hover div.static-image {display: none}
+
+.square-container {
+  position: relative;
+  width: 100%;   /* desired width */
+}
+.square-container:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;  /* initial ratio of 16:9*/
+}
+.square-content {
+  position:  absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.experiment-description {
+  margin-top: 12px;
+}
+.experiment-title {
+  margin-top: 5px;
+  font-weight: bold;
+}
+</style>
+
+          <div class="row" style="margin-bottom: 0px; padding-right: 30px; padding-left: 30px;">
+             <h2>Top experiments</h2>
+          </div>
+{% assign topexperiments = site.pages | sort: 'coolness' | reverse %}
+{% assign experiment_index = 0 %}
+{% for e in topexperiments %}
+{% if e.type == "experiment" %}          
+{% assign experiment_index = experiment_index | plus: 1 %}
+{% if experiment_index < 61 %}          
+            <div class="col-4 col-sm-4 col-lg-3">
+              <div class="panel panel-default">
+                <div>
+                  <div class="static-image square-container"><a class="square-content" href="experiments/{{ e.id }}.html"><img src="{{ e.youtube_video_for_thumbnail | replace: 'http://www.youtube.com/watch?v=', 'http://i.ytimg.com/vi/' | append: '/mqdefault.jpg'}}" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                </div>
+                <div class="panel-heading" style="background-color: white; height: 110px;">
+                  <h3 class="panel-title experiment-title"><a href="experiments/{{ e.id }}.html">{{ experiment_index }} {{ e.title_name }}</a></h3>
+                  <h3 class="panel-title experiment-description"><a href="experiments/{{ e.id }}.html">{{ e.descriptive_name }}</a></h3>
+                </div>
+              </div>
+            </div><!--/span-->
+{% endif %}
+{% endif %}
+{% endfor %}
+
+          <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px; clear: both">
+             <a href="/" class="btn btn-default">All experiments...</a>          
+          </div>

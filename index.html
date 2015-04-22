@@ -41,9 +41,41 @@ div.animated-by-hover:hover div.static-image {display: none}
 </style>
 
           <div class="jumbotron">
-            <h1>Chemistry Demonstrations</h1>
-            <p>A database of chemistry experiments that everyone can edit. If you know any chemistry demonstration not listed here you can add it.</p>
+            <h1>MEL Practicum - encyclopedia of chemistry experiments</h1>
+            <p>An online database of chemistry experiments that everyone can edit. If you know any chemistry demonstration not listed here you can add it.</p>
           </div>
+          <div class="row" style="margin-bottom: 0px; padding-right: 30px; padding-left: 30px;">
+             <h2>Top experiments</h2>
+          </div>
+{% assign topexperiments = site.pages | sort: 'coolness' | reverse %}
+{% assign experiment_index = 0 %}
+{% for e in topexperiments %}
+{% if e.type == "experiment" %}          
+{% assign experiment_index = experiment_index | plus: 1 %}
+{% if experiment_index < 9 %}          
+            <div class="col-4 col-sm-4 col-lg-3">
+              <div class="panel panel-default">
+                <div>
+                  <div class="static-image square-container"><a class="square-content" href="experiments/{{ e.id }}.html"><img src="{{ e.youtube_video_for_thumbnail | replace: 'http://www.youtube.com/watch?v=', 'http://i.ytimg.com/vi/' | append: '/mqdefault.jpg'}}" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                </div>
+                <div class="panel-heading" style="background-color: white; height: 110px;">
+                  <h3 class="panel-title experiment-title"><a href="experiments/{{ e.id }}.html">{{ experiment_index }} {{ e.title_name }}</a></h3>
+                  <h3 class="panel-title experiment-description"><a href="experiments/{{ e.id }}.html">{{ e.descriptive_name }}</a></h3>
+                </div>
+              </div>
+            </div><!--/span-->
+{% endif %}
+{% endif %}
+{% endfor %}
+
+          <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
+             <a href="top.html" class="btn btn-default pull-right">More top experiments...</a>          
+          </div>
+
+          <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
+             <h2>All experiments</h2>          
+          </div>
+
           <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
             <a href="/edit/add_experiment.html" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Experiment</a>
             <div class="btn-group pull-right">
