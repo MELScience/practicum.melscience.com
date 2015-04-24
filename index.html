@@ -44,6 +44,7 @@ div.animated-by-hover:hover div.static-image {display: none}
             <h1>MEL Practicum - encyclopedia of chemistry experiments</h1>
             <p>An online database of chemistry experiments that everyone can edit. If you know any chemistry demonstration not listed here you can add it.</p>
           </div>
+
           <div class="row" style="margin-bottom: 0px; padding-right: 30px; padding-left: 30px;">
              <h2>Top experiments</h2>
           </div>
@@ -71,11 +72,43 @@ div.animated-by-hover:hover div.static-image {display: none}
 {% endif %}
 {% endfor %}
 </div>
-
-
           <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
              <a href="top.html" class="btn btn-primary pull-right collapse collapsetopexperiments" style="margin-left: 10px; margin-right: 10px;">All top experiments...</a>
              <button class="btn btn-default pull-right" id="showmoretopexperiments" type="button" data-toggle="collapse" data-target=".collapsetopexperiments" aria-expanded="false" aria-controls="collapsetopexperiments">More top experiments...</button>
+          </div>
+
+          <div class="row" style="margin-bottom: 0px; padding-right: 30px; padding-left: 30px;">
+             <h2>New experiments</h2>
+          </div>
+{% assign newexperiments = site.pages | sort: 'add_date' | reverse %}
+{% assign experiment_index = 0 %}
+{% for e in newexperiments %}
+{% if e.type == "experiment" %}          
+{% assign experiment_index = experiment_index | plus: 1 %}
+{% if experiment_index < 13 %}          
+{% if experiment_index == 5 %}          
+<div class="collapse collapsenewexperiments">
+{% endif %}
+            <div class="col-4 col-sm-4 col-lg-3">
+              <div class="panel panel-default">
+                <div>
+                  <div class="static-image square-container"><a class="square-content" href="experiments/{{ e.id }}.html"><img src="{{ e.youtube_video_for_thumbnail | replace: 'http://www.youtube.com/watch?v=', 'http://i.ytimg.com/vi/' | append: '/mqdefault.jpg'}}" alt="Experiment thumbnail" style="width: 100%; height: auto;" class="img-rounded img-flat-bottom"></a></div>
+                </div>
+                <div class="panel-heading" style="background-color: white; height: 110px;">
+                  <h3 class="panel-title experiment-title"><a href="experiments/{{ e.id }}.html">{{ experiment_index }} {{ e.title_name }}</a></h3>
+                  <h3 class="panel-title experiment-description"><a href="experiments/{{ e.id }}.html">{{ e.descriptive_name }}</a></h3>
+                </div>
+              </div>
+            </div><!--/span-->
+{% endif %}
+{% endif %}
+{% endfor %}
+</div>
+
+
+          <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
+             <a href="new.html" class="btn btn-primary pull-right collapse collapsenewexperiments" style="margin-left: 10px; margin-right: 10px;">All new experiments...</a>
+             <button class="btn btn-default pull-right" id="showmoretopexperiments" type="button" data-toggle="collapse" data-target=".collapsenewexperiments" aria-expanded="false" aria-controls="collapsenewexperiments">More new experiments...</button>
           </div>
 
           <div class="row" style="margin-bottom: 20px; padding-right: 30px; padding-left: 30px;">
