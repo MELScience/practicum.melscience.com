@@ -117,6 +117,26 @@
 <tr><td>phases_gas</td><td>{{ page.phases_gas }}</td></tr>
 <tr><td>phases_liquide</td><td>{{ page.phases_liquide }}</td></tr>
 <tr><td>phases_solid</td><td>{{ page.phases_solid }}</td></tr>
+{% assign publish_year = page.add_date | divided_by: 10000 %}
+{% assign temp = publish_year | times: 10000 %}
+{% assign publish_monthdate = page.add_date | minus: temp %}
+{% assign publish_month = publish_monthdate | divided_by: 100 %}
+{% assign temp = publish_month | times: 100 %}
+{% assign publish_date = publish_monthdate | minus: temp %}
+{% assign publish_month_name = "Undefined" %}
+{% if publish_month == 1 %}{% assign publish_month_name = "January" %}{% endif %}
+{% if publish_month == 2 %}{% assign publish_month_name = "February" %}{% endif %}
+{% if publish_month == 3 %}{% assign publish_month_name = "March" %}{% endif %}
+{% if publish_month == 4 %}{% assign publish_month_name = "April" %}{% endif %}
+{% if publish_month == 5 %}{% assign publish_month_name = "May" %}{% endif %}
+{% if publish_month == 6 %}{% assign publish_month_name = "June" %}{% endif %}
+{% if publish_month == 7 %}{% assign publish_month_name = "July" %}{% endif %}
+{% if publish_month == 8 %}{% assign publish_month_name = "August" %}{% endif %}
+{% if publish_month == 9 %}{% assign publish_month_name = "September" %}{% endif %}
+{% if publish_month == 10 %}{% assign publish_month_name = "October" %}{% endif %}
+{% if publish_month == 11 %}{% assign publish_month_name = "November" %}{% endif %}
+{% if publish_month == 12 %}{% assign publish_month_name = "December" %}{% endif %}
+<tr><td>published</td><td>{{ publish_month_name }} {{ publish_date }}, {{ publish_year}}</td></tr>
 </table>
 
 {{ content }}
